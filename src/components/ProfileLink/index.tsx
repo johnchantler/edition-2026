@@ -14,7 +14,7 @@ export const ProfileLink = ({ profile }: { profile: VenueProfile }) => {
 
   return (
     <div className="flex flex-row items-center gap-2 text-secondary transition-transform duration-300 hover:translate-x-1 hover:brightness-125">
-      <ArrowRight className="h-4 w-4" />{" "}
+      <ArrowRight className="" />{" "}
       <Link href={`/artists/${profile.slug}`}>{content.title}</Link>
     </div>
   );

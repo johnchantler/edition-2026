@@ -23,10 +23,7 @@ export const LocationLink = ({
       target="_blank"
       className={cn("flex items-center gap-2 text-secondary", className)}
     >
-      <LocationDisplay
-        location={location}
-        icon={<MapPin className="size-3" />}
-      />{" "}
+      <LocationDisplay location={location} icon={<MapPin className="" />} />{" "}
     </a>
   ) : (
     <LocationDisplay location={location} />

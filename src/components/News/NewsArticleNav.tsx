@@ -34,7 +34,7 @@ export const NewsArticleNav = ({
           aria-label="Older article"
           className="flex items-center text-secondary hover:text-primary"
         >
-          <ArrowRight className="size-5" />
+          <ArrowRight className="" />
         </Link>
       ) : (
         <span />

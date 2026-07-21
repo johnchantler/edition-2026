@@ -22,12 +22,12 @@ export const SearchInput = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex h-6 justify-end",
+        "flex justify-end",
         className,
         isActive && "absolute left-0 w-full gap-4",
       )}
     >
-      <SearchIcon className="size-6" onClick={() => setActive(true)} />
+      <SearchIcon className="size-10" onClick={() => setActive(true)} />
       <div
         className={cn(
           "grid grid-cols-[1fr,auto] items-center gap-4 overflow-hidden transition-[width] duration-300 ease-in-out",
@@ -43,7 +43,7 @@ export const SearchInput = ({ className }: { className?: string }) => {
           onChange={(e) => setQuery(e.target.value)}
           ref={inputRef}
         />
-        <X onClick={reset} className="size-5" />
+        <X onClick={reset} className="size-10" />
       </div>
     </div>
   );
