@@ -26,7 +26,7 @@ export const NavMenuMobile = ({
 
           <Dialog.Portal>
             <Dialog.Overlay className="fixed left-0 top-0 flex h-screen w-screen overflow-y-auto bg-background">
-              <Dialog.Content className="flex w-full flex-col p-6">
+              <Dialog.Content className="flex w-full flex-col p-2">
                 <Dialog.Title className="hidden">Menu</Dialog.Title>
 
                 <header className="flex items-center justify-between pb-6 text-nav">
@@ -39,9 +39,9 @@ export const NavMenuMobile = ({
                   </div>
                 </header>
 
-                <div className="flex h-full flex-col justify-between pb-16 pt-6">
+                <div className="flex h-full flex-col justify-between pb-16 pt-2">
                   <ol
-                    className="flex flex-col gap-8 text-sm text-nav"
+                    className="flex flex-col gap-8 text-nav"
                     onClick={() => setOpen(false)}
                   >
                     {children}
