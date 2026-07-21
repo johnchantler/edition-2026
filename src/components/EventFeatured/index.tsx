@@ -4,12 +4,12 @@ import {
   getLocalizedContent,
 } from "@venuecms/sdk-next";
 import { VenueContent } from "@venuecms/sdk-next";
-
-import { VenueImage } from "@/components/VenueImage";
 import { useLocale } from "next-intl";
 
 import { Link } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+
+import { VenueImage } from "@/components/VenueImage";
 
 import { LocationLink } from "../LocationLink";
 import { TicketList } from "../TicketList";
@@ -52,10 +52,10 @@ export const EventFeatured = ({
               })}
             </Link>
           </div>
-          <div className="text-xl text-primary">
+          <div className="text-primary">
             <Link href={`/events/${event.slug}`}>{content.title}</Link>
             {location ? (
-              <LocationLink className="pt-2 text-2xl" location={location} />
+              <LocationLink className="pt-2" location={location} />
             ) : null}
           </div>
           {isCancelled ? <div className="text-secondary">Cancelled</div> : null}
@@ -86,13 +86,13 @@ export const EventFeatured = ({
             </div>
             {location ? <LocationLink location={location} /> : null}
           </div>
-          <div className="text-xl">
+          <div className="">
             <Link href={`/events/${event.slug}`}>{content.title}</Link>
           </div>
           <Link href={`/events/${event.slug}`}>
             <VenueImage image={event.image} />
           </Link>
-          <div className="text-xl">
+          <div className="">
             <Link href={`/events/${event.slug}`}>
               <VenueContent content={content} contentStyles={renderedStyles} />
             </Link>
