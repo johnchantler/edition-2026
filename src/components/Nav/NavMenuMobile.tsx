@@ -16,12 +16,12 @@ export const NavMenuMobile = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex w-auto items-center justify-between sm:hidden">
+    <nav className="flex w-auto items-center justify-between md:hidden">
       <div className="flex gap-8">
         {/* <SearchIcon className="size-6" /> */}
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger>
-            <MenuIcon className="size-6" />
+            <MenuIcon className="size-10" />
           </Dialog.Trigger>
 
           <Dialog.Portal>
@@ -34,7 +34,7 @@ export const NavMenuMobile = ({
                   <div className="flex flex-row gap-8">
                     {/* <SearchIcon className="size-6" /> */}
                     <Dialog.Close>
-                      <X className="size-6" />
+                      <X className="size-10" />
                     </Dialog.Close>
                   </div>
                 </header>

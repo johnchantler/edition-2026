@@ -11,6 +11,7 @@ import { ReactNode } from "react";
 
 import { Link } from "@/lib/i18n";
 
+import { SiteLogo } from "../SiteLogo";
 import { renderedStyles } from "../utils";
 import { NavMenuDesktop } from "./NavMenuDesktop";
 import { NavMenuMobile } from "./NavMenuMobile";

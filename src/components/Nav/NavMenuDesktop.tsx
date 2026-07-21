@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 
 import { SearchInput } from "../Search/SearchInput";
 import { useSearchQuery } from "../Search/provider";
+import { SiteLogo } from "../SiteLogo";
 
 export const NavMenuDesktop = ({
   showSearch,
@@ -13,11 +14,12 @@ export const NavMenuDesktop = ({
   children: ReactNode;
 }) => {
   const { isActive } = useSearchQuery();
-
   return (
-    <nav className="relative hidden w-full items-center justify-between sm:flex">
+    <nav className="relative hidden w-full items-center justify-between md:flex">
       {!isActive ? (
-        <ol className="mr-8 flex items-center gap-8 text-nav">{children}</ol>
+        <ol className="md: flex w-full items-center justify-between px-8 text-nav lg:px-16">
+          {children}
+        </ol>
       ) : null}
       {showSearch ? <SearchInput /> : null}
     </nav>
