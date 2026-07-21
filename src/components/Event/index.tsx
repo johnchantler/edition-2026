@@ -4,11 +4,11 @@ import {
   getLocalizedContent,
 } from "@venuecms/sdk-next";
 import { VenueContent } from "@venuecms/sdk-next";
-
-import { VenueImage } from "@/components/VenueImage";
 import { useLocale } from "next-intl";
 
 import { cn } from "@/lib/utils";
+
+import { VenueImage } from "@/components/VenueImage";
 
 import { LocationLink } from "../LocationLink";
 import { ProfileCompact } from "../ProfileCompact";
@@ -65,7 +65,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
 
       <ColumnRight className="max-w-4xl">
         <VenueContent
-          className="flex flex-col gap-6 sm:pr-32"
+          className="flex flex-col gap-6"
           content={content}
           contentStyles={renderedStyles}
         />

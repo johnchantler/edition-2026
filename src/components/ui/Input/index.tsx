@@ -26,8 +26,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         value={value}
         onChange={handleChange}
         className={cn(
-          "h-6 border border-muted bg-transparent p-1 text-primary outline-transparent",
-          "focus-within:outline-nav focus-within:ring-transparent",
+          "bg-background p-0 text-primary outline-none",
+          "focus-within:outline-none focus-within:ring-transparent",
           className,
         )}
         {...rest}

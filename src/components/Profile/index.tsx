@@ -3,10 +3,10 @@ import {
   getLocalizedContent,
 } from "@venuecms/sdk-next";
 import { VenueContent } from "@venuecms/sdk-next";
-
-import { VenueImage } from "@/components/VenueImage";
 import { useLocale, useTranslations } from "next-intl";
 import { Suspense } from "react";
+
+import { VenueImage } from "@/components/VenueImage";
 
 import { ColumnLeft, ColumnRight, TwoColumnLayout } from "../layout";
 import { renderedStyles } from "../utils";
@@ -32,7 +32,7 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
 
       <ColumnRight className="max-w-5xl">
         <VenueContent
-          className="flex flex-col gap-6 sm:pr-32"
+          className="flex flex-col gap-6"
           content={content}
           contentStyles={renderedStyles}
         />

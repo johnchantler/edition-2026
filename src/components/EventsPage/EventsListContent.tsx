@@ -25,7 +25,7 @@ export async function EventsListContent({ locale }: { locale: string }) {
 
   return (
     <TwoColumnLayout>
-      <ColumnLeft className="text-sm text-secondary">
+      <ColumnLeft className="text-secondary">
         <p className="pb-8 text-primary">{pageTitle}</p>
       </ColumnLeft>
       <ColumnRight>
