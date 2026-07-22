@@ -37,7 +37,13 @@ export async function EventsListContent({ locale }: { locale: string }) {
         {events?.records.length ? (
           <EventsList className="gap-y-12">
             {events.records.map((event) => (
-              <ListEvent key={event.id} event={event} site={site} />
+              <ListEvent
+                key={event.id}
+                event={event}
+                site={site}
+                withTime={false}
+                dateTemplate={"d.M.yy"}
+              />
             ))}
           </EventsList>
         ) : (

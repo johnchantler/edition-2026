@@ -31,7 +31,13 @@ export const ProfileEventList = async ({
       </h2>
       <EventsList>
         {events.records.map((event) => (
-          <ListEvent key={event.id} event={event} site={site} />
+          <ListEvent
+            key={event.id}
+            event={event}
+            site={site}
+            withTime={false}
+            dateTemplate={"d.MM.yy"}
+          />
         ))}
       </EventsList>
     </div>

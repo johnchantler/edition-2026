@@ -53,6 +53,5 @@ export const formatDateRange = ({
     return `${format(new TZDate(start, timeZone), "d")}—${formatDate({ date: end, withTime: false, timeZone, template: "d.M.yy" })}`;
   }
 
-  return `${format(new TZDate(start, timeZone), "d")} ${format(new TZDate(startDate, timeZone), "M")} — ${format(new TZDate(endDate, timeZone), "d")} 
-       ${format(new TZDate(endDate, timeZone), "M")} ${format(new TZDate(endDate, timeZone), "yy")}`;
+  return `${format(new TZDate(start, timeZone), "d")}.${format(new TZDate(startDate, timeZone), "M")}—${format(new TZDate(endDate, timeZone), "d")}.${format(new TZDate(endDate, timeZone), "M")}.${format(new TZDate(endDate, timeZone), "yy")}`;
 };
