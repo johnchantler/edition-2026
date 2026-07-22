@@ -13,6 +13,7 @@ import { VenueImage } from "@/components/VenueImage";
 
 import { ProfileCompact } from "../ProfileCompact";
 import {
+  ColumnFull,
   ColumnLeft,
   ColumnRight,
   TwoColumnLayout,
@@ -34,47 +35,45 @@ export const Product = ({
 
   return (
     <TwoColumnLayout>
-      <ColumnLeft>
-        <div className="flex flex-col gap-14">
-          <div className="flex flex-col gap-10">
-            <div>
-              {product.author ? (
-                <div className={cn("text-secondary")}>{product.author}</div>
-              ) : null}
-              <div>{content.title}</div>
-            </div>
-            {variants.length > 0 ? (
-              <div className="flex flex-col gap-4 pt-2">
-                {variants.map((variant) => (
-                  <div
-                    key={variant.productType?.type}
-                    className="flex items-center gap-8"
-                  >
-                    <div className="text-muted">
-                      {variant.productType?.type}
-                    </div>
-                    <VariantPrice variant={variant} site={site} />
-                  </div>
-                ))}
-              </div>
+      <ColumnFull>
+        <div className="flex translate-x-8 flex-col gap-0 md:translate-x-16 md:flex-row md:gap-4">
+          <div className="text-highlight">( {content.title} )</div>
+          <div>
+            {product.author ? (
+              <div className={cn("text-secondary")}>{product.author}</div>
             ) : null}
           </div>
+        </div>
+
+        <div className="md:w-2/3 md:translate-x-16">
           <VenueImage image={product.image} />
         </div>
-      </ColumnLeft>
 
-      <ColumnRight className="max-w-4xl">
+        <div className="translate-x-8 md:translate-x-16">
+          {variants.length > 0 ? (
+            <div className="flex flex-row gap-4 pt-2 text-lg">
+              {variants.map((variant) => (
+                <div
+                  key={variant.productType?.type}
+                  className="flex items-center gap-8"
+                >
+                  <div className="text-muted">{variant.productType?.type}</div>
+                  <VariantPrice variant={variant} site={site} />
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
         <VenueContent
           className="flex flex-col gap-6"
           content={content}
           contentStyles={renderedStyles}
         />
-        <TwoSubColumnLayout>
-          {artists.map(({ profile }) => (
-            <ProfileCompact key={profile.slug} profile={profile} />
-          ))}
-        </TwoSubColumnLayout>
-      </ColumnRight>
+
+        {artists.map(({ profile }) => (
+          <ProfileCompact key={profile.slug} profile={profile} />
+        ))}
+      </ColumnFull>
     </TwoColumnLayout>
   );
 };

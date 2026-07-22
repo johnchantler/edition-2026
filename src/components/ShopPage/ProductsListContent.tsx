@@ -40,12 +40,12 @@ export async function ProductsListContent({
     ? getLocalizedContent(page.localizedContent, locale).content.title
     : "Shop";
 
-  const topProducts = products?.records.slice(0, 4);
-  const moreProducts = products?.records.slice(4);
+  const topProducts = products?.records.slice(0, 24);
+  const moreProducts = products?.records.slice(24);
 
   return (
     <section className="py-20">
-      <div className="grid gap-8 pb-20 sm:max-w-full lg:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-2 pb-20 sm:max-w-full lg:grid-cols-2 xl:grid-cols-2">
         {topProducts?.length
           ? topProducts.map((product) => (
               <ListProduct
@@ -58,7 +58,7 @@ export async function ProductsListContent({
           : "No products found"}
       </div>
       {moreProducts?.length ? (
-        <div className="grid grid-cols-2 gap-8 sm:max-w-full lg:grid-cols-[repeat(4,minmax(1rem,32rem))] xl:grid-cols-[repeat(6,minmax(1rem,32rem))]">
+        <div className="grid grid-cols-1 gap-2 text-lg sm:max-w-full lg:grid-cols-[repeat(3,minmax(1rem,32rem))] xl:grid-cols-[repeat(3,minmax(1rem,32rem))]">
           {moreProducts.map((product) => (
             <ListProduct key={product.slug} product={product} site={site} />
           ))}

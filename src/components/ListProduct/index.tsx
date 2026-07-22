@@ -1,9 +1,10 @@
 import { Product, Site, getLocalizedContent } from "@venuecms/sdk-next";
-import { VenueImage } from "@/components/VenueImage";
 import { useLocale } from "next-intl";
 
 import { Link } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+
+import { VenueImage } from "@/components/VenueImage";
 
 export const ListProduct = ({
   product,
@@ -23,22 +24,22 @@ export const ListProduct = ({
   return (
     <div
       className={cn(
-        "flex break-inside-avoid flex-col gap-8 pb-8 sm:gap-0",
+        "flex break-inside-avoid flex-col gap-2 pb-8 md:px-16 md:pb-16",
         className,
       )}
     >
-      <div className="w-full pb-3 sm:w-auto sm:max-w-full">
+      <div className="w-full sm:w-auto sm:max-w-full md:pb-3">
         <Link href={`/shop/${product.slug}`}>
           <VenueImage image={product.image} aspect="square" />
         </Link>
       </div>
-      <div className="flex flex-col">
+      <div className="text-balance text-highlight hover:translate-y-0.5 hover:brightness-125">
+        <Link href={`/shop/${product.slug}`}>{content.title}</Link>
+      </div>
+      <div className="flex translate-x-8 flex-col md:translate-x-16">
         {product.author ? (
           <div className="text-secondary">{product.author}</div>
         ) : null}
-        <div className="text-primary">
-          <Link href={`/shop/${product.slug}`}>{content.title}</Link>
-        </div>
       </div>
     </div>
   );

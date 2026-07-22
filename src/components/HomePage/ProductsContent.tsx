@@ -9,27 +9,18 @@ export async function ProductsContent() {
   await connection();
 
   const [{ data: products }, { data: site }] = await Promise.all([
-    getProducts({ limit: 10 }),
+    getProducts({ limit: 2 }),
     getSite(),
   ]);
 
   if (!site) return null;
 
-  // Only show for specific sites
-  if (site.name !== "ELNA" && site.name !== "infant tree") {
-    return null;
-  }
-
-  const topProducts = products?.records.slice(0, 4);
+  const topProducts = products?.records.slice(0, 24);
   const moreProducts = products?.records.slice(4);
 
   return (
     <section className="py-20">
-      <p className="pb-8 text-primary">
-        <Link href="/shop">Works</Link>
-      </p>
-
-      <div className="grid grid-cols-2 gap-8 pb-20 sm:max-w-full sm:grid-cols-4 xl:grid-cols-4">
+      <div className="grid grid-cols-2 gap-8 pb-20 sm:max-w-full sm:grid-cols-2 xl:grid-cols-2">
         {topProducts?.length
           ? topProducts.map((product) => (
               <ListProduct
@@ -51,8 +42,11 @@ export async function ProductsContent() {
       <div className="w-full grid-cols-3 sm:grid">
         <span></span>
         <span></span>
-        <Link className="flex w-full sm:relative sm:flex-row" href="/shop">
-          → see all works
+        <Link
+          className="flex w-full hover:translate-y-0.5 hover:text-secondary sm:relative sm:flex-row"
+          href="/shop"
+        >
+          → see all
         </Link>
       </div>
     </section>

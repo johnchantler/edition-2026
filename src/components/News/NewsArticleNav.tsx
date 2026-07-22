@@ -14,7 +14,7 @@ export const NewsArticleNav = ({
   return (
     <nav
       aria-label="News pagination"
-      className="mt-8 flex items-center justify-between gap-4"
+      className="mx-2 mt-16 flex items-center justify-between gap-4 md:mx-8"
     >
       {newerSlug ? (
         <Link
@@ -22,7 +22,7 @@ export const NewsArticleNav = ({
           aria-label="Newer article"
           className="flex items-center text-secondary hover:text-primary"
         >
-          <ArrowLeft className="size-5" />
+          <ArrowLeft className="size-10" />
         </Link>
       ) : (
         <span />
@@ -34,7 +34,7 @@ export const NewsArticleNav = ({
           aria-label="Older article"
           className="flex items-center text-secondary hover:text-primary"
         >
-          <ArrowRight className="" />
+          <ArrowRight className="size-10" />
         </Link>
       ) : (
         <span />
