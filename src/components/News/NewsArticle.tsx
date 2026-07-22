@@ -45,7 +45,7 @@ export const NewsArticle = async ({
   return (
     <TwoColumnLayout className="overflow-hidden">
       <ColumnFull className="gap-0">
-        <h1 className="translate-x-8 text-muted md:translate-x-16">
+        <h1 className="translate-x-8 text-wrap text-muted md:translate-x-16">
           ( {date ? <span className="hidden md:inline">{date} — </span> : null}{" "}
           {content.title} )
         </h1>
