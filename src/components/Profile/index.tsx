@@ -37,7 +37,9 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
             contentStyles={renderedStyles}
           />
         </div>
-        <VenueImage image={profile.image} />
+        <div className="pb-8 md:w-2/3 md:translate-x-16">
+          <VenueImage image={profile.image} aspect="video" />
+        </div>
         <ErrorBoundary fallback={null}>
           <Suspense fallback={<ProfileEventListSkeleton numElements={1} />}>
             <ProfileEventList
