@@ -20,3 +20,7 @@ export function EventsError() {
 export function ProductsError() {
   return null; // Products are optional and site-specific, so hide on error
 }
+
+export function ProfilesError() {
+  return null; // Profiles are optional and site-specific, so hide on error
+}

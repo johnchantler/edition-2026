@@ -92,3 +92,24 @@ export function ProductsSkeleton() {
     </section>
   );
 }
+export function ProfilesSkeleton() {
+  return (
+    <section className="py-20">
+      <div className="pb-8">
+        <Skeleton className="w-16" />
+      </div>
+
+      <div className="grid grid-cols-2 gap-8 pb-20 sm:max-w-full sm:grid-cols-4 xl:grid-cols-4">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="flex flex-col gap-3">
+            <Skeleton className="aspect-square" />
+            <div className="flex flex-col gap-1">
+              <Skeleton className="h-3 w-1/2" />
+              <Skeleton className="w-3/4" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
