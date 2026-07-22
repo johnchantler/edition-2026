@@ -1,8 +1,9 @@
 import { Site } from "@venuecms/sdk-next";
-import { VenueImage } from "@/components/VenueImage";
 
 import { Link } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+
+import { VenueImage } from "@/components/VenueImage";
 
 export const SiteLogo = ({
   className,
@@ -14,10 +15,7 @@ export const SiteLogo = ({
   const { name, image } = site;
 
   const headerImage = image ? (
-    <VenueImage
-      image={image}
-      className="h-auto w-auto min-w-8 sm:h-auto sm:max-h-12 sm:w-auto sm:max-w-[32rem]"
-    />
+    <VenueImage image={image} className="h-full max-h-12 w-full md:max-h-16" />
   ) : null;
 
   return headerImage ? (
