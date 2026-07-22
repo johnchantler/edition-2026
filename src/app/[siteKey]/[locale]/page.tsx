@@ -39,9 +39,9 @@ const Home = async ({ params }: { params: Promise<Params> }) => {
   return (
     <>
       <FeaturedEventsSection locale={locale} />
-      <ProfilesSection />
       <EventsSection locale={locale} />
       <ProductsSection />
+      <ProfilesSection />
     </>
   );
 };
