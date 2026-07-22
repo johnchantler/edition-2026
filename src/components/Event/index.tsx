@@ -14,6 +14,7 @@ import { LocationLink } from "../LocationLink";
 import { ProfileCompact } from "../ProfileCompact";
 import { TicketList } from "../TicketList";
 import {
+  ColumnFull,
   ColumnLeft,
   ColumnRight,
   TwoColumnLayout,
@@ -35,46 +36,45 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
 
   return (
     <TwoColumnLayout>
-      <ColumnLeft>
-        <div className="flex flex-col gap-14">
-          <div className="flex flex-col gap-10">
-            <div>
-              <div
-                className={cn("text-secondary", isCancelled && "line-through")}
-              >
-                {formatDateRange({
-                  start: event.startDate,
-                  end: event.endDate,
-                  withTime: event.hasTime,
-                  timeZone: site.timeZone!,
-                })}
-              </div>
-              <div>{content.title}</div>
-              {location ? <LocationLink location={location} /> : null}
-            </div>
+      <ColumnFull>
+        <div>
+          <div className="translate-x-8 gap-0 text-highlight md:translate-x-16">
+            ( {content.title} )
+          </div>
+          <div
+            className={cn(
+              "flex flex-col gap-0 text-secondary md:flex-row md:gap-4",
+              isCancelled && "line-through",
+            )}
+          >
+            {formatDateRange({
+              start: event.startDate,
+              end: event.endDate,
+              withTime: event.hasTime,
+              timeZone: site.timeZone!,
+            })}
+
+            {location ? <LocationLink location={location} /> : null}
+
             {isCancelled ? (
               <div className="text-secondary">Cancelled</div>
             ) : null}
-            {!isCancelled && event.tickets ? (
-              <TicketList tickets={event.tickets} />
-            ) : null}
           </div>
-          <VenueImage image={displayImage} />
         </div>
-      </ColumnLeft>
-
-      <ColumnRight className="max-w-4xl">
+        {!isCancelled && event.tickets ? (
+          <TicketList tickets={event.tickets} />
+        ) : null}
         <VenueContent
           className="flex flex-col gap-6"
           content={content}
           contentStyles={renderedStyles}
         />
-        <TwoSubColumnLayout>
-          {artists.map(({ profile }) => (
-            <ProfileCompact key={profile.slug} profile={profile} />
-          ))}
-        </TwoSubColumnLayout>
-      </ColumnRight>
+        <VenueImage image={displayImage} />
+
+        {artists.map(({ profile }) => (
+          <ProfileCompact key={profile.slug} profile={profile} />
+        ))}
+      </ColumnFull>
     </TwoColumnLayout>
   );
 };
