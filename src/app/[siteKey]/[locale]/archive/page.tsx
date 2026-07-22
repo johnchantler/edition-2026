@@ -6,7 +6,12 @@ import { notFound } from "next/navigation";
 
 import { EventsList, ListEvent } from "@/components/EventList";
 import { Pagination } from "@/components/Pagination";
-import { ColumnLeft, ColumnRight, TwoColumnLayout } from "@/components/layout";
+import {
+  ColumnFull,
+  ColumnLeft,
+  ColumnRight,
+  TwoColumnLayout,
+} from "@/components/layout";
 import { setupSSR } from "@/components/utils";
 
 export const generateMetadata = getGenerateMetadata(() =>
@@ -58,10 +63,10 @@ const ArchivePage = async ({
 
   return (
     <TwoColumnLayout>
-      <ColumnLeft className="text-sm text-secondary">
-        <p className="font-medium text-primary">{pageTitle}</p>
-      </ColumnLeft>
-      <ColumnRight>
+      <ColumnFull className="gap-0 overflow-hidden">
+        <p className="translate-x-8 font-medium text-muted md:translate-x-16">
+          ( {pageTitle} )
+        </p>
         {events?.records.length ? (
           <EventsList>
             {events.records.map((event) => (
@@ -70,7 +75,7 @@ const ArchivePage = async ({
                 event={event}
                 site={site}
                 withTime={false}
-                dateTemplate={"d MMMM yyyy"}
+                dateTemplate={"d.M.yy"}
               />
             ))}
           </EventsList>
@@ -87,7 +92,7 @@ const ArchivePage = async ({
             baseUrl={`/archive`} // Use locale in base URL
           />
         ) : null}
-      </ColumnRight>
+      </ColumnFull>
     </TwoColumnLayout>
   );
 };

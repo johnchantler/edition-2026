@@ -11,6 +11,7 @@ import { ReactNode } from "react";
 
 import { Link } from "@/lib/i18n";
 
+import { SiteLogo } from "../SiteLogo";
 import { renderedStyles } from "../utils";
 import { NavMenuDesktop } from "./NavMenuDesktop";
 import { NavMenuMobile } from "./NavMenuMobile";
@@ -46,7 +47,10 @@ export const Nav = async ({ logo, site }: { logo: ReactNode; site: Site }) => {
 
   const menuItems = rootPageContents
     ? rootPageContents.map(({ page, content, isStatic }) => (
-        <li key={page.slug}>
+        <li
+          className="transition-transform hover:translate-y-0.5 hover:opacity-80"
+          key={page.slug}
+        >
           <Link
             href={
               page.type === "LINK" && page.linkUrl

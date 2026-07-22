@@ -25,7 +25,7 @@ export const formatDateRange = ({
   end,
   timeZone,
   withTime,
-  template = "EEEE d MMMM yyyy",
+  template = "d.M.yy",
 }: {
   start: string;
   end: string;
@@ -50,9 +50,8 @@ export const formatDateRange = ({
     startDate.getFullYear() === endDate.getFullYear();
 
   if (isSameMonth) {
-    return `${format(new TZDate(start, timeZone), "d")}—${formatDate({ date: end, withTime: false, timeZone, template: "d MMMM yyyy" })}`;
+    return `${format(new TZDate(start, timeZone), "d")}—${formatDate({ date: end, withTime: false, timeZone, template: "d.M.yy" })}`;
   }
 
-  return `${format(new TZDate(start, timeZone), "d")} ${format(new TZDate(startDate, timeZone), "MMMM")} — ${format(new TZDate(endDate, timeZone), "d")} 
-       ${format(new TZDate(endDate, timeZone), "MMMM")} ${format(new TZDate(endDate, timeZone), "yyyy")}`;
+  return `${format(new TZDate(start, timeZone), "d")}.${format(new TZDate(startDate, timeZone), "M")}—${format(new TZDate(endDate, timeZone), "d")}.${format(new TZDate(endDate, timeZone), "M")}.${format(new TZDate(endDate, timeZone), "yy")}`;
 };
