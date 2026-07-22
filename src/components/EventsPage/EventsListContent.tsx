@@ -42,7 +42,7 @@ export async function EventsListContent({ locale }: { locale: string }) {
                 event={event}
                 site={site}
                 withTime={false}
-                dateTemplate={"d.M.yy"}
+                dateTemplate={"d.M"}
               />
             ))}
           </EventsList>

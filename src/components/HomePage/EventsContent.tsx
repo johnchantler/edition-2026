@@ -40,7 +40,13 @@ export async function EventsContent({ locale }: { locale: string }) {
           <section className="flex flex-col gap-3">
             <EventsList>
               {events.records.map((event) => (
-                <ListEvent key={event.id} event={event} site={site} />
+                <ListEvent
+                  key={event.id}
+                  event={event}
+                  site={site}
+                  withTime={false}
+                  dateTemplate={"d.M"}
+                />
               ))}
             </EventsList>
             {events.records.length >= 6 ? (

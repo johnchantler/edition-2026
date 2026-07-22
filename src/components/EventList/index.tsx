@@ -77,7 +77,7 @@ export const ListEvent = ({
             </Link>
           </div>
         ) : null}
-        <div className="hidden md:flex">—</div>
+
         <div
           className={cn(
             "text-highlight hover:brightness-150 md:text-nowrap",
