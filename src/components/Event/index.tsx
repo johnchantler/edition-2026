@@ -35,7 +35,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
     artists?.find((artist) => !!artist.profile?.image)?.profile.image;
 
   return (
-    <TwoColumnLayout>
+    <TwoColumnLayout className="overflow-hidden">
       <ColumnFull>
         <div>
           <div className="translate-x-8 gap-0 text-highlight md:translate-x-16">
