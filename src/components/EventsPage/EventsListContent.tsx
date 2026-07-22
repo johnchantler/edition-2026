@@ -4,7 +4,12 @@ import { notFound } from "next/navigation";
 import { connection } from "next/server";
 
 import { EventsList, ListEvent } from "@/components/EventList";
-import { ColumnLeft, ColumnRight, TwoColumnLayout } from "@/components/layout";
+import {
+  ColumnFull,
+  ColumnLeft,
+  ColumnRight,
+  TwoColumnLayout,
+} from "@/components/layout";
 
 export async function EventsListContent({ locale }: { locale: string }) {
   await connection();
@@ -25,20 +30,20 @@ export async function EventsListContent({ locale }: { locale: string }) {
 
   return (
     <TwoColumnLayout>
-      <ColumnLeft className="text-secondary">
-        <p className="pb-8 text-primary">{pageTitle}</p>
-      </ColumnLeft>
-      <ColumnRight>
+      <ColumnFull className="gap-0">
+        <p className="translate-x-8 text-muted md:translate-x-16">
+          ( {pageTitle} )
+        </p>
         {events?.records.length ? (
           <EventsList className="gap-y-12">
             {events.records.map((event) => (
-              <ListEvent key={event.id} event={event} site={site} withImage />
+              <ListEvent key={event.id} event={event} site={site} />
             ))}
           </EventsList>
         ) : (
           "No events found"
         )}
-      </ColumnRight>
+      </ColumnFull>
     </TwoColumnLayout>
   );
 }

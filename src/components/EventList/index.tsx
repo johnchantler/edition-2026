@@ -18,7 +18,11 @@ export const EventsList = ({
   children: ReactNode;
   className?: string;
 }) => {
-  return <div className={cn("flex flex-col gap-0", className)}>{children}</div>;
+  return (
+    <div className={cn("flex flex-col gap-6 md:gap-0", className)}>
+      {children}
+    </div>
+  );
 };
 
 export const ListEvent = ({
@@ -48,7 +52,7 @@ export const ListEvent = ({
   return (
     <div
       className={cn(
-        "flex break-inside-avoid flex-row gap-8 sm:gap-0",
+        "flex break-inside-avoid flex-col gap-8 sm:gap-0 md:flex-row",
         className,
       )}
     >
@@ -59,9 +63,9 @@ export const ListEvent = ({
           </Link>
         </div>
       ) : null}
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-col gap-0 md:flex-row md:gap-4">
         {event.startDate ? (
-          <div className="text-primary">
+          <div className="text-primary md:text-nowrap">
             <Link href={`/events/${event.slug}`}>
               {formatDateRange({
                 start: event.startDate,
@@ -73,10 +77,10 @@ export const ListEvent = ({
             </Link>
           </div>
         ) : null}
-        —
+        <div className="hidden md:flex">—</div>
         <div
           className={cn(
-            "wrap-nowrap text-highlight hover:brightness-150",
+            "text-highlight hover:brightness-150 md:text-nowrap",
             isCancelled && "line-through",
           )}
         >

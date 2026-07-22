@@ -48,7 +48,7 @@ const LocationDisplay = ({
   const { isDefault, country, city, region } = location;
 
   return (
-    <div className="text-balance hover:brightness-150">
+    <div className="hover:brightness-150 md:text-nowrap">
       {!isDefault ? `${city ? `${city},` : ""}` : null} {locationContent.title}
       <span className="inline-block px-2">{icon}</span>
     </div>
