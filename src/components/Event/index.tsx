@@ -43,7 +43,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
           </div>
           <div
             className={cn(
-              "flex flex-col gap-0 text-secondary md:flex-row md:gap-4",
+              "flex translate-x-8 flex-col gap-0 text-secondary md:flex-row md:gap-4",
               isCancelled && "line-through",
             )}
           >

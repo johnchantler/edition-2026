@@ -1,8 +1,8 @@
-import { VenueImage } from "@/components/VenueImage";
 import { getEvents, getSite } from "@venuecms/sdk-next";
 import { connection } from "next/server";
 
 import { EventFeatured } from "@/components/EventFeatured";
+import { VenueImage } from "@/components/VenueImage";
 
 export async function FeaturedEventsContent({ locale }: { locale: string }) {
   await connection();
@@ -38,7 +38,7 @@ export async function FeaturedEventsContent({ locale }: { locale: string }) {
               key={event.id}
               event={event}
               site={site}
-              className="lg:pb-64"
+              className="lg:pb-16"
             />
           ))}
         </div>
