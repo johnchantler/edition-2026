@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { VenueImage } from "@/components/VenueImage";
 
 import { LocationLink } from "../LocationLink";
+import { LocationLinkSimple } from "../LocationLinkSimple";
 import { formatDateRange } from "../utils";
 
 export const EventsList = ({
@@ -17,16 +18,7 @@ export const EventsList = ({
   children: ReactNode;
   className?: string;
 }) => {
-  return (
-    <div
-      className={cn(
-        "flex flex-col gap-x-8 sm:grid sm:grid-flow-row sm:grid-cols-2",
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
+  return <div className={cn("flex flex-col gap-0", className)}>{children}</div>;
 };
 
 export const ListEvent = ({
@@ -56,7 +48,7 @@ export const ListEvent = ({
   return (
     <div
       className={cn(
-        "flex break-inside-avoid flex-col gap-8 pb-8 sm:gap-0",
+        "flex break-inside-avoid flex-row gap-8 sm:gap-0",
         className,
       )}
     >
@@ -67,9 +59,9 @@ export const ListEvent = ({
           </Link>
         </div>
       ) : null}
-      <div className="flex flex-col">
+      <div className="flex flex-row gap-4">
         {event.startDate ? (
-          <div className="text-secondary">
+          <div className="text-primary">
             <Link href={`/events/${event.slug}`}>
               {formatDateRange({
                 start: event.startDate,
@@ -81,16 +73,17 @@ export const ListEvent = ({
             </Link>
           </div>
         ) : null}
+        —
         <div
           className={cn(
-            "text-balance text-primary hover:brightness-150",
+            "wrap-nowrap text-highlight hover:brightness-150",
             isCancelled && "line-through",
           )}
         >
           <Link href={`/events/${event.slug}`}>{content.title}</Link>
         </div>
         {event.location && !event.location.isDefault ? (
-          <LocationLink location={event.location} />
+          <LocationLinkSimple location={event.location} />
         ) : null}
         {isCancelled ? <div className="">Cancelled</div> : null}
       </div>
