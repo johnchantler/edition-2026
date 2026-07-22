@@ -12,6 +12,7 @@ import { VenueImage } from "@/components/VenueImage";
 import { PageTree } from "../PageTree";
 import { ProfileCompact } from "../ProfileCompact";
 import {
+  ColumnFull,
   ColumnLeft,
   ColumnRight,
   TwoColumnLayout,
@@ -33,28 +34,26 @@ export const Page = ({
 
   return (
     <TwoColumnLayout>
-      <ColumnLeft>
-        <div className="flex flex-col gap-12">
-          <div>
-            <div>{content.title}</div>
+      <ColumnFull>
+        <div className="gap-0">
+          {" "}
+          <div className="translate-x-8 text-highlight md:translate-x-16">
+            ( {content.title} )
           </div>
-          <VenueImage image={page.image} />
-          <PageTree pages={pages} />
+          <VenueContent
+            className="flex flex-col gap-6"
+            content={content}
+            contentStyles={renderedStyles}
+          />
         </div>
-      </ColumnLeft>
-
-      <ColumnRight>
-        <VenueContent
-          className="flex max-w-[42rem] flex-col gap-6"
-          content={content}
-          contentStyles={renderedStyles}
-        />
-        <TwoSubColumnLayout>
-          {artists.map(({ profile }) => (
-            <ProfileCompact key={profile.slug} profile={profile} />
-          ))}
-        </TwoSubColumnLayout>
-      </ColumnRight>
+        <div className="pt-6 md:w-2/3 md:translate-x-16">
+          <VenueImage image={page.image} />
+        </div>
+        {artists.map(({ profile }) => (
+          <ProfileCompact key={profile.slug} profile={profile} />
+        ))}
+        <PageTree pages={pages} />
+      </ColumnFull>
     </TwoColumnLayout>
   );
 };
