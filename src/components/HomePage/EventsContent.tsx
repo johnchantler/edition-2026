@@ -8,7 +8,12 @@ import { Link } from "@/lib/i18n";
 
 import { EventsList, ListEvent } from "@/components/EventList";
 import { TranslatedText } from "@/components/TranslatedText";
-import { ColumnLeft, ColumnRight, TwoColumnLayout } from "@/components/layout";
+import {
+  ColumnFull,
+  ColumnLeft,
+  ColumnRight,
+  TwoColumnLayout,
+} from "@/components/layout";
 import { renderedStyles } from "@/components/utils";
 
 export async function EventsContent({ locale }: { locale: string }) {
@@ -30,16 +35,7 @@ export async function EventsContent({ locale }: { locale: string }) {
 
   return (
     <TwoColumnLayout>
-      <ColumnLeft className="hidden text-secondary sm:flex">
-        {siteContent ? (
-          <VenueContent
-            className="flex flex-col gap-6"
-            content={siteContent}
-            contentStyles={renderedStyles}
-          />
-        ) : null}
-      </ColumnLeft>
-      <ColumnRight>
+      <ColumnFull>
         {events?.records.length ? (
           <section className="flex flex-col gap-3">
             <EventsList>
@@ -74,7 +70,16 @@ export async function EventsContent({ locale }: { locale: string }) {
             />
           </div>
         ) : null}
-      </ColumnRight>
+      </ColumnFull>
+      <ColumnFull className="hidden text-secondary sm:flex">
+        {siteContent ? (
+          <VenueContent
+            className="flex flex-col gap-6"
+            content={siteContent}
+            contentStyles={renderedStyles}
+          />
+        ) : null}
+      </ColumnFull>
     </TwoColumnLayout>
   );
 }
