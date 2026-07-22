@@ -107,7 +107,9 @@ export const SearchResults = ({ children }: PropsWithChildren) => {
                   href={`/${filterToPathMap[currentFilter]}/${result.slug}`}
                   onClick={reset}
                 >
-                  <div className="text-secondary">{content.title}</div>
+                  <div className="text-secondary transition-transform hover:translate-y-0.5 hover:text-highlight">
+                    {content.title}
+                  </div>
                   <div>
                     {content.shortContent ?? getExcerpt(content.content)}
                   </div>
