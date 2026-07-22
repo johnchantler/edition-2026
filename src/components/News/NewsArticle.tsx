@@ -10,7 +10,12 @@ import { VenueImage } from "@/components/VenueImage";
 
 import { ProfileCompact } from "../ProfileCompact";
 import { ProfileLink } from "../ProfileLink";
-import { ColumnLeft, ColumnRight, TwoColumnLayout } from "../layout";
+import {
+  ColumnFull,
+  ColumnLeft,
+  ColumnRight,
+  TwoColumnLayout,
+} from "../layout";
 import { renderedStyles } from "../utils";
 import { NewsArticleNav } from "./NewsArticleNav";
 import { NewsSidebar } from "./NewsSidebar";
@@ -34,30 +39,36 @@ export const NewsArticle = async ({
 
   const date =
     typeof article.date === "string"
-      ? format(new Date(article.date), "EEEE d MMMM yyyy")
+      ? format(new Date(article.date), "d MMMM yy")
       : null;
 
   return (
-    <TwoColumnLayout>
-      <ColumnLeft className="order-last lg:order-none">
-        <NewsSidebar currentSlug={article.slug} title={title} />
-      </ColumnLeft>
-      <ColumnRight className="gap-6">
-        <h1 className="text-secondary">{content.title}</h1>
-        {date ? <div className="text-muted">{date}</div> : null}
-        {article.image ? <VenueImage image={article.image} /> : null}
+    <TwoColumnLayout className="overflow-hidden">
+      <ColumnFull className="gap-0">
+        <h1 className="translate-x-8 text-muted md:translate-x-16">
+          ( {date ? <span className="hidden md:inline">{date} — </span> : null}{" "}
+          {content.title} )
+        </h1>
         <VenueContent
           className="flex max-w-[64ch] flex-col gap-6"
           content={content}
           contentStyles={renderedStyles}
         />
-        <div className="flex flex-col gap-2">
+        {article.image ? (
+          <div className="pt-6 md:w-2/3 md:translate-x-16">
+            <VenueImage image={article.image} aspect="video" />
+          </div>
+        ) : null}
+        <div className="flex -translate-y-4 translate-x-8 flex-col gap-2 md:translate-x-16">
           {artists.map(({ profile }) => (
             <ProfileLink key={profile.slug} profile={profile} />
           ))}
         </div>
         <NewsArticleNav newerSlug={newerSlug} olderSlug={olderSlug} />
-      </ColumnRight>
+      </ColumnFull>
+      <ColumnFull className="order-last lg:order-none">
+        <NewsSidebar currentSlug={article.slug} title={title} />
+      </ColumnFull>
     </TwoColumnLayout>
   );
 };

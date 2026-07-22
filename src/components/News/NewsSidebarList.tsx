@@ -1,5 +1,6 @@
 "use client";
 
+import { format } from "date-fns/fp/format";
 import { useState } from "react";
 
 import { Link } from "@/lib/i18n";
@@ -49,13 +50,15 @@ export const NewsSidebarList = ({
   const hasOlder = page < totalPages - 1;
 
   return (
-    <nav className="flex flex-col items-center gap-4 lg:items-start">
+    <nav className="mx-2 flex flex-col gap-0 md:mx-0 md:translate-x-16 lg:items-start">
       {hasNewer ? (
-        <PagerButton
-          label="Show newer news"
-          glyph="↑"
-          onClick={() => setPage((p) => Math.max(0, p - 1))}
-        />
+        <div className="py-8">
+          <PagerButton
+            label="Show newer news"
+            glyph="↑"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+          />
+        </div>
       ) : null}
 
       {visible.map((item) => (
@@ -63,20 +66,22 @@ export const NewsSidebarList = ({
           key={item.slug}
           href={`/news/${item.slug}`}
           className={cn(
-            "hover:text-primary",
+            "hover:translate-y-0.5 hover:text-muted",
             item.slug === currentSlug ? "text-primary" : "text-secondary",
           )}
         >
-          {item.title}
+          ( {item.title} )
         </Link>
       ))}
 
       {hasOlder ? (
-        <PagerButton
-          label="Show older news"
-          glyph="↓"
-          onClick={() => setPage((p) => p + 1)}
-        />
+        <div className="py-8">
+          <PagerButton
+            label="Show older news"
+            glyph="↓"
+            onClick={() => setPage((p) => p + 1)}
+          />
+        </div>
       ) : null}
     </nav>
   );

@@ -13,9 +13,8 @@ export const ProfileLink = ({ profile }: { profile: VenueProfile }) => {
   const { content } = getLocalizedContent(profile?.localizedContent, locale);
 
   return (
-    <div className="flex flex-row items-center gap-2 text-secondary transition-transform duration-300 hover:translate-x-1 hover:brightness-125">
-      <ArrowRight className="" />{" "}
-      <Link href={`/artists/${profile.slug}`}>{content.title}</Link>
+    <div className="flex flex-row items-center gap-2 text-highlight transition-transform duration-300 hover:translate-y-0.5 hover:brightness-125">
+      <Link href={`/artists/${profile.slug}`}>( {content.title} )</Link>
     </div>
   );
 };
