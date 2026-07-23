@@ -11,6 +11,8 @@ import {
   TwoColumnLayout,
 } from "@/components/layout";
 
+import { EventsListArtist, ListEventArtist } from "../EventListArtist";
+
 export async function EventsListContent({ locale }: { locale: string }) {
   await connection();
 
@@ -35,9 +37,9 @@ export async function EventsListContent({ locale }: { locale: string }) {
           ( {pageTitle} )
         </p>
         {events?.records.length ? (
-          <EventsList className="gap-y-12">
+          <EventsListArtist className="gap-y-12">
             {events.records.map((event) => (
-              <ListEvent
+              <ListEventArtist
                 key={event.id}
                 event={event}
                 site={site}
@@ -45,7 +47,7 @@ export async function EventsListContent({ locale }: { locale: string }) {
                 dateTemplate={"d.M"}
               />
             ))}
-          </EventsList>
+          </EventsListArtist>
         ) : (
           "No events found"
         )}

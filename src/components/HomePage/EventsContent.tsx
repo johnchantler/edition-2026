@@ -16,6 +16,8 @@ import {
 } from "@/components/layout";
 import { renderedStyles } from "@/components/utils";
 
+import { EventsListArtist, ListEventArtist } from "../EventListArtist";
+
 export async function EventsContent({ locale }: { locale: string }) {
   await connection();
 
@@ -38,9 +40,9 @@ export async function EventsContent({ locale }: { locale: string }) {
       <ColumnFull>
         {events?.records.length ? (
           <section className="flex flex-col gap-3">
-            <EventsList>
+            <EventsListArtist>
               {events.records.map((event) => (
-                <ListEvent
+                <ListEventArtist
                   key={event.id}
                   event={event}
                   site={site}
@@ -48,7 +50,7 @@ export async function EventsContent({ locale }: { locale: string }) {
                   dateTemplate={"d.M"}
                 />
               ))}
-            </EventsList>
+            </EventsListArtist>
             {events.records.length >= 6 ? (
               <div className="w-full grid-cols-1 gap-12 sm:grid">
                 <span></span>
