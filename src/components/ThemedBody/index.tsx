@@ -1,7 +1,7 @@
 import { getSite } from "@venuecms/sdk-next";
 import { ThemeProvider } from "next-themes";
 import {
-  Abel,
+  Atkinson_Hyperlegible_Next,
   Courier_Prime,
   EB_Garamond,
   Gothic_A1,
@@ -13,9 +13,7 @@ import {
   Kosugi_Maru,
   Open_Sans,
   Oswald,
-  Outfit,
   Schibsted_Grotesk,
-  Special_Elite,
   Work_Sans,
   Young_Serif,
 } from "next/font/google";
@@ -45,12 +43,6 @@ const KosugiMaru = Kosugi_Maru({
   display: "swap",
 });
 
-const SpecialElite = Special_Elite({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
-
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -69,18 +61,6 @@ const ebGaramond = EB_Garamond({
   display: "swap",
 });
 
-const abel = Abel({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-});
-
 const SchibstedGrotesk = Schibsted_Grotesk({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -89,7 +69,7 @@ const SchibstedGrotesk = Schibsted_Grotesk({
 
 const HankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "800"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -122,17 +102,21 @@ const OpenSans = Open_Sans({
   display: "swap",
 });
 
+const AtkinsonHyperlegibleNext = Atkinson_Hyperlegible_Next({
+  subsets: ["latin"],
+  weight: ["300", "600"],
+  display: "swap",
+});
+
 const ThemeFonts = {
   Work_Sans: WorkSans.style,
+  Atkinson_Hyperlegible_Next: AtkinsonHyperlegibleNext.style,
   oswald: oswald.style,
   Courier: courierPrime.style,
   Kosugi_Maru: KosugiMaru.style,
-  Special_Elite: SpecialElite.style,
   Inter: inter.style,
   Karla: karla.style,
   EB_Garamond: ebGaramond.style,
-  abel: abel.style,
-  outfit: outfit.style,
   Schibsted_Grotesk: SchibstedGrotesk.style,
   Hanken_Grotesk: HankenGrotesk.style,
   Young_Serif: YoungSerif.style,

@@ -2,44 +2,36 @@
   "type": "object",
   "title": "Config",
   "properties": {
-    "themeId": {
+    "themeID": {
       "type": "string",
       "enum": [
         "default",
-        "space",
-        "larry",
-        "darkGold",
-        "hojden",
-        "ahmed",
-        "frim",
-        "kvast",
-        "bronze",
-        "queen",
-        "moss",
-        "slate",
-        "hotPink",
-        "helloDarkness",
-        "goldenCircle1",
-        "goldenCircle2",
-        "newLand",
-        "hundredK",
-        "silverGrey1",
-        "silverGrey2",
-        "darkGrey1",
-        "eroPink",
-        "blackOnWhite",
-        "darkGreyCM"
+        "dark",
+        "light",
+        "hundredK"
       ],
       "default": "default",
-      "title": "Theme"
+      "title": "Theme",
+      "description": "The default theme switches between dark and light based on user browser preferences"
+    },
+    "highlight": {
+      "type": "string",
+      "enum": [
+        "yellow",
+        "pink",
+        "cyan",
+        "darkBlue",
+        "red"
+      ],
+      "default": "yellow",
+      "title": "Highlight",
+      "description": "Pick a highlight color from the list or get in touch for custom requests."
     },
     "fontName": {
       "type": "string",
       "enum": [
         "default",
         "custom",
-        "abel",
-        "outfit",
         "Schibsted_Grotesk",
         "Hanken_Grotesk",
         "Young_Serif",
@@ -50,7 +42,6 @@
         "Karla",
         "Courier",
         "Kosugi_Maru",
-        "Special_Elite",
         "Inter",
         "Atkinson_Hyperlegible_Next",
         "Oswald",
