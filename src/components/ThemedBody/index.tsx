@@ -1,7 +1,7 @@
 import { getSite } from "@venuecms/sdk-next";
 import { ThemeProvider } from "next-themes";
 import {
-  Atkinson_Hyperlegible_Next,
+  Atkinson_Hyperlegible,
   Courier_Prime,
   EB_Garamond,
   Gothic_A1,
@@ -87,6 +87,7 @@ const GothicA1 = Gothic_A1({
 
 const jost = Jost({
   subsets: ["latin"],
+  weight: ["300", "600"],
   display: "swap",
 });
 
@@ -102,15 +103,15 @@ const OpenSans = Open_Sans({
   display: "swap",
 });
 
-const AtkinsonHyperlegibleNext = Atkinson_Hyperlegible_Next({
+const AtkinsonHyperlegible = Atkinson_Hyperlegible({
   subsets: ["latin"],
-  weight: ["300", "600"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
 const ThemeFonts = {
   Work_Sans: WorkSans.style,
-  Atkinson_Hyperlegible_Next: AtkinsonHyperlegibleNext.style,
+  Atkinson_Hyperlegible: AtkinsonHyperlegible.style,
   oswald: oswald.style,
   Courier: courierPrime.style,
   Kosugi_Maru: KosugiMaru.style,
