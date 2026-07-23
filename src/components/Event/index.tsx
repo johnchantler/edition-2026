@@ -38,7 +38,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
     <TwoColumnLayout className="overflow-hidden">
       <ColumnFull>
         <div>
-          <div className="translate-x-8 gap-0 text-highlight md:translate-x-16">
+          <div className="translate-x-8 gap-0 text-balance text-highlight md:translate-x-16">
             ( {content.title} )
           </div>
           <div
