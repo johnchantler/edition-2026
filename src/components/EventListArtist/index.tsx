@@ -48,7 +48,9 @@ export const ListEventArtist = ({
     event.image ??
     event.relations?.parents?.[0]?.image ??
     artists?.find((artist) => !!artist.profile?.image)?.profile.image;
-
+  const artistList = artists.map(({ profile }) => (
+    <ProfileLinkEvent key={profile.slug} profile={profile} />
+  ));
   return (
     <div
       className={cn(
@@ -84,9 +86,11 @@ export const ListEventArtist = ({
             isCancelled && "line-through",
           )}
         >
-          {artists.map(({ profile }) => (
-            <ProfileLinkEvent key={profile.slug} profile={profile} />
-          ))}
+          {artists.length ? (
+            artistList
+          ) : (
+            <Link href={`/events/${event.slug}`}>{content.title}</Link>
+          )}
         </div>
         {event.location && !event.location.isDefault ? (
           <LocationLinkSimple location={event.location} />
