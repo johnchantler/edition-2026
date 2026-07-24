@@ -37,7 +37,7 @@ export const Page = ({
       <ColumnFull>
         <div className="gap-0">
           {" "}
-          <div className="translate-x-8 text-highlight md:translate-x-16">
+          <div className="pl-8 text-highlight md:pl-16">
             ( {content.title} )
           </div>
           <VenueContent
@@ -46,7 +46,7 @@ export const Page = ({
             contentStyles={renderedStyles}
           />
         </div>
-        <div className="pt-6 md:w-2/3 md:translate-x-16">
+        <div className="pt-6 md:w-2/3 md:pl-16">
           <VenueImage image={page.image} />
         </div>
         {artists.map(({ profile }) => (

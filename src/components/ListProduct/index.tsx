@@ -36,7 +36,7 @@ export const ListProduct = ({
       <div className="text-balance text-highlight hover:translate-y-0.5 hover:brightness-125">
         <Link href={`/shop/${product.slug}`}>{content.title}</Link>
       </div>
-      <div className="flex translate-x-8 flex-col md:translate-x-16">
+      <div className="flex flex-col md:pl-8">
         {product.author ? (
           <div className="text-secondary">{product.author}</div>
         ) : null}

@@ -46,7 +46,7 @@ export const EventFeatured = ({
           <Link href={`/events/${event.slug}`}>
             <VenueImage image={event.image} />
           </Link>
-          <div className="-translate-y-4 translate-x-8 md:translate-x-16">
+          <div className="pl-8 md:pl-16">
             <div className="text-highlight transition-transform hover:translate-y-0.5 hover:brightness-125">
               <Link href={`/events/${event.slug}`}>( {content.title} )</Link>
             </div>
@@ -80,7 +80,7 @@ export const EventFeatured = ({
                 contentStyles={renderedStyles}
               />
             </Link>
-            <div className="flex translate-x-8 flex-col gap-0 md:translate-x-16">
+            <div className="flex flex-col gap-0 pl-8 md:pl-16">
               {artists.map(({ profile }) => (
                 <ProfileLink key={profile.slug} profile={profile} />
               ))}

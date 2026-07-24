@@ -64,9 +64,7 @@ const ArchivePage = async ({
   return (
     <TwoColumnLayout>
       <ColumnFull className="gap-0 overflow-hidden">
-        <p className="translate-x-8 font-medium text-muted md:translate-x-16">
-          ( {pageTitle} )
-        </p>
+        <p className="pl-8 font-medium text-muted md:pl-16">( {pageTitle} )</p>
         {events?.records.length ? (
           <EventsList>
             {events.records.map((event) => (
