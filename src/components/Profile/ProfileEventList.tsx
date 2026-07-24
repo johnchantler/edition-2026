@@ -26,9 +26,7 @@ export const ProfileEventList = async ({
 
   return events?.records.length ? (
     <div className="flex flex-col gap-0">
-      <h2 className="z-50 m-0 translate-x-8 py-0 text-muted md:translate-x-16">
-        ( {header} )
-      </h2>
+      <h2 className="z-50 m-0 py-0 pl-8 text-muted md:pl-16">( {header} )</h2>
       <EventsList>
         {events.records.map((event) => (
           <ListEvent

@@ -9,7 +9,7 @@ export async function ProfilesContent() {
   await connection();
 
   const [{ data: profiles }, { data: site }] = await Promise.all([
-    getProfiles({ limit: 99, dir: "desc" }),
+    getProfiles({ limit: 299, dir: "desc" }),
     getSite(),
   ]);
 

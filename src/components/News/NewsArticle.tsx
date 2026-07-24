@@ -45,7 +45,7 @@ export const NewsArticle = async ({
   return (
     <TwoColumnLayout className="overflow-hidden">
       <ColumnFull className="gap-0">
-        <h1 className="translate-x-8 text-wrap text-muted md:translate-x-16">
+        <h1 className="text-wrap pl-8 text-muted md:pl-16">
           ( {date ? <span className="hidden md:inline">{date} — </span> : null}{" "}
           {content.title} )
         </h1>
@@ -55,11 +55,11 @@ export const NewsArticle = async ({
           contentStyles={renderedStyles}
         />
         {article.image ? (
-          <div className="pt-6 md:w-2/3 md:translate-x-16">
+          <div className="pt-6 md:w-2/3 md:pl-16">
             <VenueImage image={article.image} aspect="video" />
           </div>
         ) : null}
-        <div className="flex -translate-y-4 translate-x-8 flex-col gap-2 md:translate-x-16">
+        <div className="flex -translate-y-4 flex-col gap-2 pl-8 md:pl-16">
           {artists.map(({ profile }) => (
             <ProfileLink key={profile.slug} profile={profile} />
           ))}

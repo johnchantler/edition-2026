@@ -33,9 +33,7 @@ export async function EventsListContent({ locale }: { locale: string }) {
   return (
     <TwoColumnLayout>
       <ColumnFull className="gap-0">
-        <p className="translate-x-8 text-muted md:translate-x-16">
-          ( {pageTitle} )
-        </p>
+        <p className="pl-8 text-muted md:pl-16">( {pageTitle} )</p>
         {events?.records.length ? (
           <EventsListArtist className="gap-y-12">
             {events.records.map((event) => (

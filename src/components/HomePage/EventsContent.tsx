@@ -22,7 +22,7 @@ export async function EventsContent({ locale }: { locale: string }) {
   await connection();
 
   const [{ data: events }, { data: site }] = await Promise.all([
-    getEvents({ limit: 6, upcoming: true }),
+    getEvents({ limit: 10, upcoming: true }),
     getSite(),
   ]);
 
@@ -51,7 +51,7 @@ export async function EventsContent({ locale }: { locale: string }) {
                 />
               ))}
             </EventsListArtist>
-            {events.records.length >= 6 ? (
+            {events.records.length >= 11 ? (
               <div className="w-full grid-cols-1 gap-12 sm:grid">
                 <span></span>
                 <Link

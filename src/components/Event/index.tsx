@@ -6,10 +6,13 @@ import {
 import { VenueContent } from "@venuecms/sdk-next";
 import { useLocale } from "next-intl";
 
+import { Link } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import { VenueImage } from "@/components/VenueImage";
 
+import { EventsListArtist } from "../EventListArtist";
+import { ListEventArtist } from "../EventListArtist";
 import { LocationLink } from "../LocationLink";
 import { ProfileCompact } from "../ProfileCompact";
 import { TicketList } from "../TicketList";
@@ -25,25 +28,37 @@ import { renderedStyles } from "../utils/styles";
 
 export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
   const locale = useLocale();
-  const { location, artists } = event;
+  const { location, artists, relations } = event;
 
   const { content } = getLocalizedContent(event?.localizedContent, locale);
+
   const isCancelled = event.publishState === "CANCELLED";
   const displayImage =
     event.image ??
     event.relations?.parents?.[0]?.image ??
     artists?.find((artist) => !!artist.profile?.image)?.profile.image;
+  const parentEvent = event.relations?.parents?.[0]?.localizedContent?.[0];
 
   return (
     <TwoColumnLayout className="overflow-hidden">
       <ColumnFull>
         <div>
-          <div className="translate-x-8 gap-0 text-balance text-highlight md:translate-x-16">
-            ( {content.title} )
+          <div className="flex flex-col gap-0 md:flex-row md:gap-4">
+            {parentEvent && (
+              <div className="text-secondary hover:translate-y-0.5 hover:text-primary">
+                <Link href={`/events/${event.relations?.parents?.[0]?.slug}`}>
+                  {parentEvent.title}
+                </Link>
+              </div>
+            )}
+
+            <div className="gap-0 text-balance pl-8 text-highlight md:pl-16">
+              ( {content.title} )
+            </div>
           </div>
           <div
             className={cn(
-              "flex translate-x-8 flex-col gap-0 text-secondary md:flex-row md:gap-4",
+              "flex flex-col gap-0 pl-8 text-secondary md:flex-row md:gap-4",
               isCancelled && "line-through",
             )}
           >

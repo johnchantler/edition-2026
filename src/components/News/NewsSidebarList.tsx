@@ -50,7 +50,7 @@ export const NewsSidebarList = ({
   const hasOlder = page < totalPages - 1;
 
   return (
-    <nav className="mx-2 flex flex-col gap-0 md:mx-0 md:translate-x-16 lg:items-start">
+    <nav className="mx-2 flex flex-col gap-0 md:mx-0 md:pl-16 lg:items-start">
       {hasNewer ? (
         <div className="py-8">
           <PagerButton

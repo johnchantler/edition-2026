@@ -28,7 +28,7 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
     <TwoColumnLayout>
       <ColumnFull className="">
         <div className="flex flex-col gap-0">
-          <div className="translate-x-8 text-highlight md:translate-x-16">
+          <div className="pl-8 text-highlight md:pl-16">
             ( {content.title} )
           </div>
           <VenueContent
