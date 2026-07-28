@@ -11,6 +11,7 @@ import { VenueImage } from "@/components/VenueImage";
 
 import { PageTree } from "../PageTree";
 import { ProfileCompact } from "../ProfileCompact";
+import { SubPage } from "../SubPage";
 import {
   ColumnFull,
   ColumnLeft,
@@ -31,6 +32,7 @@ export const Page = ({
 
   const { artists = [] } = page;
   const { content } = getLocalizedContent(page?.localizedContent, locale);
+  const subpages = pages.filter((subpage) => subpage.parentId === page.id);
 
   return (
     <TwoColumnLayout>
@@ -52,7 +54,10 @@ export const Page = ({
         {artists.map(({ profile }) => (
           <ProfileCompact key={profile.slug} profile={profile} />
         ))}
-        <PageTree pages={pages} />
+
+        {subpages.map((page) => (
+          <SubPage key={page.slug} page={page} />
+        ))}
       </ColumnFull>
     </TwoColumnLayout>
   );
