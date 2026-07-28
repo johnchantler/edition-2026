@@ -75,7 +75,7 @@ export const EventFeatured = ({
             ) : null}
             <Link href={`/events/${event.slug}`}>
               <VenueContent
-                className="flex flex-col gap-6"
+                className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
                 content={content}
                 contentStyles={renderedStyles}
               />

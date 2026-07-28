@@ -43,7 +43,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
     <TwoColumnLayout className="overflow-hidden">
       <ColumnFull>
         <div>
-          <div className="flex flex-col gap-0 md:flex-row md:gap-4">
+          <div className="flex flex-col gap-0 text-nowrap md:flex-row md:gap-4 md:pl-16">
             {parentEvent && (
               <div className="text-secondary hover:translate-y-0.5 hover:text-primary">
                 <Link href={`/events/${event.relations?.parents?.[0]?.slug}`}>
@@ -58,7 +58,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
           </div>
           <div
             className={cn(
-              "flex flex-col gap-0 pl-8 text-secondary md:flex-row md:gap-4",
+              "flex flex-col gap-0 text-secondary md:flex-row md:gap-4 md:pl-16",
               isCancelled && "line-through",
             )}
           >
@@ -80,11 +80,11 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
           <TicketList tickets={event.tickets} />
         ) : null}
         <VenueContent
-          className="flex flex-col gap-6"
+          className="flex max-w-[48rem] flex-col gap-6 md:pb-6 md:pl-24 md:pt-6"
           content={content}
           contentStyles={renderedStyles}
         />
-        <VenueImage image={displayImage} />
+        <VenueImage className="m-auto" image={displayImage} />
 
         {artists.map(({ profile }) => (
           <ProfileCompact key={profile.slug} profile={profile} />

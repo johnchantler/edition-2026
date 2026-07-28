@@ -5,7 +5,7 @@ import { Link } from "@/lib/i18n";
 
 export const TicketList = ({ tickets }: { tickets: Array<TicketOnEvent> }) => {
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className="flex flex-wrap gap-8 md:pl-16">
       {tickets.map((ticket) => {
         const ticketText =
           ticket.price > 0

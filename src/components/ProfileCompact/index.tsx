@@ -23,11 +23,11 @@ export const ProfileCompact = ({ profile }: { profile: VenueProfile }) => {
           <Link href={`/artists/${profile.slug}`}>( {content.title} )</Link>
         </div>
         <VenueContent
-          className="flex flex-col gap-6 pr-4"
+          className="flex max-w-[48rem] flex-col gap-6 pr-4 md:pl-24 md:pt-6"
           content={content}
           contentStyles={renderedStyles}
         />
-        <div className="pt-6 md:w-2/3 md:pl-16">
+        <div className="m-auto py-8 md:w-2/3 md:pt-12">
           <Link href={`/artists/${profile.slug}`}>
             <VenueImage image={profile.image} aspect="video" />
           </Link>
