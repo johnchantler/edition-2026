@@ -158,7 +158,7 @@ export const ThemedBody = async ({ children }: { children: ReactNode }) => {
 
                @font-face {
                 font-family: 'content';
-                src: url('../content.woff2') format('woff2');
+                src: url('content.woff2') format('woff2');
                 font-weight: normal;
                 font-style: normal;
                 font-display: swap;

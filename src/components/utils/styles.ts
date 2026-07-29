@@ -7,7 +7,7 @@ export const renderedStyles = {
   h3: "text-secondary text-lg pt-4",
   ol: "list-decimal pl-8",
   ul: "list-disc pl-4",
-  a: "underline underline-offset-8 text-primary",
+  a: "underline underline-offset-4 text-primary",
 };
 
 export const getExcerpt = (content?: string | null) => {

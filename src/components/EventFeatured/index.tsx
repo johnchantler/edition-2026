@@ -109,9 +109,7 @@ export const EventFeatured = ({
             <VenueImage image={event.image} />
           </Link>
           <div className="">
-            <Link href={`/events/${event.slug}`}>
-              <VenueContent content={content} contentStyles={renderedStyles} />
-            </Link>
+            <VenueContent content={content} contentStyles={renderedStyles} />
           </div>
         </div>
       </div>

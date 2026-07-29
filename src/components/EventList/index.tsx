@@ -80,7 +80,7 @@ export const ListEvent = ({
 
         <div
           className={cn(
-            "text-highlight hover:brightness-150 md:text-nowrap",
+            "text-highlight hover:translate-y-0.5 hover:brightness-150 md:text-nowrap",
             isCancelled && "line-through",
           )}
         >
