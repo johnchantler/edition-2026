@@ -32,7 +32,7 @@ export async function FeaturedEventsContent({ locale }: { locale: string }) {
         </div>
       ) : null}
       {featuredEvents?.records.length ? (
-        <div className="flex flex-col pb-16">
+        <div className="flex flex-col">
           {featuredEvents.records.map((event) => (
             <EventFeatured
               key={event.id}

@@ -25,11 +25,11 @@ export const TicketList = ({ tickets }: { tickets: Array<TicketOnEvent> }) => {
           </Link>
         ) : (
           <div key={ticket.name}>
-            {ticketText}{" "}
             {ticket.name.toLowerCase() !== "regular" &&
             !(ticketText === "free" && tickets.length === 1)
               ? ticket.name.toLowerCase()
-              : ""}
+              : ""}{" "}
+            <span className="font-content text-sm">{ticketText}</span>
           </div>
         );
       })}

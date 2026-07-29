@@ -36,7 +36,7 @@ const CreditWrapper = ({
   credit ? (
     <div className="relative">
       {children}
-      <div className="absolute bottom--1 right-0 text-end text-xs text-muted opacity-60">
+      <div className="absolute bottom--1 right-0 text-end font-content text-xs text-muted opacity-80">
         {credit}
       </div>
     </div>

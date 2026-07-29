@@ -31,12 +31,19 @@ export const ListedContent = ({
             </h2>
           )}
           {shortcontent && (
-            <div className="md: pl-16 pl-8 text-secondary">{shortcontent}</div>
+            <div className="pl-8 font-content text-sm text-primary md:pl-32">
+              {shortcontent}
+            </div>
           )}
         </div>
 
         {typeof content === "string" && (
-          <p className="text-secondary">{content}</p>
+          <div className="max-w-[48rem] pl-24 font-content text-sm text-secondary">
+            <p>{content}</p>
+            <p className="pl-8 pt-6 text-highlight hover:translate-y-0.5">
+              <Link href={titleLink}>[ read more ]</Link>
+            </p>
+          </div>
         )}
 
         {typeof content === "object" && (
