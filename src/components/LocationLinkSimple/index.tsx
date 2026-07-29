@@ -33,7 +33,7 @@ export const LocationLinkSimple = ({
   );
 };
 
-const LocationDisplay = ({
+export const LocationDisplay = ({
   location,
   icon,
 }: {

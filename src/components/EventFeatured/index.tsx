@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { VenueImage } from "@/components/VenueImage";
 
 import { LocationLink } from "../LocationLink";
-import { LocationLinkSimple } from "../LocationLinkSimple";
+import { LocationDisplay } from "../LocationLinkSimple";
 import { ProfileLink } from "../ProfileLink";
 import { TicketList } from "../TicketList";
 import {
@@ -59,10 +59,9 @@ export const EventFeatured = ({
                   withTime: event.hasTime,
                   timeZone: site.timeZone!,
                 })}
+
+                {location ? <LocationDisplay location={location} /> : null}
               </Link>
-              {location ? (
-                <LocationLinkSimple className="pt-2" location={location} />
-              ) : null}
             </div>
 
             {isCancelled ? (

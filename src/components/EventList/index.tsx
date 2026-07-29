@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { VenueImage } from "@/components/VenueImage";
 
 import { LocationLink } from "../LocationLink";
-import { LocationLinkSimple } from "../LocationLinkSimple";
+import { LocationDisplay } from "../LocationLinkSimple";
 import { formatDateRange } from "../utils";
 
 export const EventsList = ({
@@ -87,8 +87,11 @@ export const ListEvent = ({
           <Link href={`/events/${event.slug}`}>{content.title}</Link>
         </div>
         {event.location && !event.location.isDefault ? (
-          <LocationLinkSimple location={event.location} />
+          <Link href={`/events/${event.slug}`}>
+            <LocationDisplay location={event.location} />
+          </Link>
         ) : null}
+
         {isCancelled ? <div className="">Cancelled</div> : null}
       </div>
     </div>
