@@ -16,7 +16,11 @@ import {
 } from "../layout";
 import { renderedStyles } from "../utils";
 import { ErrorBoundary } from "../utils/ErrorBoundary";
-import { ProfileEventList, ProfileEventListSkeleton } from "./ProfileEventList";
+import { ProfileEventList } from "./ProfileEventList";
+import {
+  ProfileEventListSkeleton,
+  ProfileProductList,
+} from "./ProfileProductList";
 
 export const Profile = ({ profile }: { profile: VenueProfile }) => {
   const locale = useLocale();
@@ -42,6 +46,15 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
             <VenueImage image={profile.image} aspect="video" />
           ) : null}
         </div>
+        <ErrorBoundary fallback={null}>
+          <Suspense fallback={<ProfileEventListSkeleton numElements={1} />}>
+            <ProfileProductList
+              header={t("recordings")}
+              slug={profile.slug}
+              filter={{ upcoming: true, dir: "asc" }}
+            />
+          </Suspense>
+        </ErrorBoundary>
         <ErrorBoundary fallback={null}>
           <Suspense fallback={<ProfileEventListSkeleton numElements={1} />}>
             <ProfileEventList
