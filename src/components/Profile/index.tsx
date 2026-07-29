@@ -32,13 +32,15 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
             ( {content.title} )
           </div>
           <VenueContent
-            className="flex flex-col gap-6"
+            className="flex max-w-[48rem] flex-col gap-6 pt-6 md:pl-24"
             content={content}
             contentStyles={renderedStyles}
           />
         </div>
-        <div className="pb-8 md:w-2/3 md:translate-x-16">
-          <VenueImage image={profile.image} aspect="video" />
+        <div className="pb-8 md:m-auto md:w-2/3 md:py-8">
+          {profile.image ? (
+            <VenueImage image={profile.image} aspect="video" />
+          ) : null}
         </div>
         <ErrorBoundary fallback={null}>
           <Suspense fallback={<ProfileEventListSkeleton numElements={1} />}>

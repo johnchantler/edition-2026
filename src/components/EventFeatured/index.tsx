@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { VenueImage } from "@/components/VenueImage";
 
 import { LocationLink } from "../LocationLink";
-import { LocationLinkSimple } from "../LocationLinkSimple";
+import { LocationDisplay } from "../LocationLinkSimple";
 import { ProfileLink } from "../ProfileLink";
 import { TicketList } from "../TicketList";
 import {
@@ -42,13 +42,13 @@ export const EventFeatured = ({
   return (
     <>
       <TwoColumnLayout className={cn(className, "hidden")}>
-        <ColumnFull className="gap-0 overflow-hidden">
+        <ColumnFull className="gap-0">
           <Link href={`/events/${event.slug}`}>
             <VenueImage image={event.image} />
           </Link>
           <div className="pl-8 md:pl-16">
             <div className="text-highlight transition-transform hover:translate-y-0.5 hover:brightness-125">
-              <Link href={`/events/${event.slug}`}>( {content.title} )</Link>
+              <Link href={`/events/${event.slug}`}>{content.title}</Link>
             </div>
 
             <div className="flex flex-col gap-0 md:flex-row md:items-center md:gap-4">
@@ -59,10 +59,9 @@ export const EventFeatured = ({
                   withTime: event.hasTime,
                   timeZone: site.timeZone!,
                 })}
+
+                {location ? <LocationDisplay location={location} /> : null}
               </Link>
-              {location ? (
-                <LocationLinkSimple className="pt-2" location={location} />
-              ) : null}
             </div>
 
             {isCancelled ? (
@@ -73,13 +72,13 @@ export const EventFeatured = ({
             {!isCancelled && event.tickets ? (
               <TicketList tickets={event.tickets} />
             ) : null}
-            <Link href={`/events/${event.slug}`}>
-              <VenueContent
-                className="flex flex-col gap-6"
-                content={content}
-                contentStyles={renderedStyles}
-              />
-            </Link>
+
+            <VenueContent
+              className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
+              content={content}
+              contentStyles={renderedStyles}
+            />
+
             <div className="flex flex-col gap-0 pl-8 md:pl-16">
               {artists.map(({ profile }) => (
                 <ProfileLink key={profile.slug} profile={profile} />
@@ -88,10 +87,10 @@ export const EventFeatured = ({
           </div>
         </ColumnFull>
       </TwoColumnLayout>
-      <div className="flex sm:hidden">
-        <div className="flex flex-col gap-8">
+      <div className="flex pt-8 md:hidden">
+        <div className="flex flex-col gap-0">
           <div>
-            <div className="text-secondary">
+            <div className="text-primary">
               <Link href={`/events/${event.slug}`}>
                 {formatDateRange({
                   start: event.startDate,
@@ -101,18 +100,18 @@ export const EventFeatured = ({
                 })}
               </Link>
             </div>
-            {location ? <LocationLink location={location} /> : null}
+            {location ? <LocationDisplay location={location} /> : null}
           </div>
-          <div className="">
+          <div className="text-highlight hover:translate-y-0.5">
             <Link href={`/events/${event.slug}`}>{content.title}</Link>
           </div>
-          <Link href={`/events/${event.slug}`}>
-            <VenueImage image={event.image} />
-          </Link>
-          <div className="">
+          {event.image ? (
             <Link href={`/events/${event.slug}`}>
-              <VenueContent content={content} contentStyles={renderedStyles} />
+              <VenueImage image={event.image} />
             </Link>
+          ) : null}
+          <div className="pt-6">
+            <VenueContent content={content} contentStyles={renderedStyles} />
           </div>
         </div>
       </div>

@@ -72,7 +72,7 @@ export async function EventsContent({ locale }: { locale: string }) {
         {siteContent ? (
           <div className="flex sm:hidden">
             <VenueContent
-              className="flex flex-col gap-6"
+              className="flex max-w-[48rem] flex-col gap-6"
               content={siteContent}
               contentStyles={renderedStyles}
             />
@@ -82,7 +82,7 @@ export async function EventsContent({ locale }: { locale: string }) {
       <ColumnFull className="hidden text-secondary sm:flex">
         {siteContent ? (
           <VenueContent
-            className="flex flex-col gap-6"
+            className="flex max-w-[48rem] flex-col gap-6"
             content={siteContent}
             contentStyles={renderedStyles}
           />

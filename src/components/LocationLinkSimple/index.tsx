@@ -33,7 +33,7 @@ export const LocationLinkSimple = ({
   );
 };
 
-const LocationDisplay = ({
+export const LocationDisplay = ({
   location,
   icon,
 }: {
@@ -49,7 +49,8 @@ const LocationDisplay = ({
 
   return (
     <div className="hover:brightness-150 md:text-nowrap">
-      {!isDefault ? `${city ? `${city},` : ""}` : null} {locationContent.title}
+      {/*!isDefault ? `${city ? `${city},` : ""}` : null*/}{" "}
+      {locationContent.title}
       <span className="inline-block px-2">{icon}</span>
     </div>
   );

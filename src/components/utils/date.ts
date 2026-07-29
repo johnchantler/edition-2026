@@ -25,7 +25,7 @@ export const formatDateRange = ({
   end,
   timeZone,
   withTime,
-  template = "d.M.yy",
+  template = "EEEE d.M.yy",
 }: {
   start: string;
   end: string;

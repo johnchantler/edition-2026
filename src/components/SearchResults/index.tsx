@@ -107,10 +107,10 @@ export const SearchResults = ({ children }: PropsWithChildren) => {
                   href={`/${filterToPathMap[currentFilter]}/${result.slug}`}
                   onClick={reset}
                 >
-                  <div className="text-secondary transition-transform hover:translate-y-0.5 hover:text-highlight">
+                  <div className="text-balance text-secondary transition-transform hover:translate-y-0.5 hover:text-highlight">
                     {content.title}
                   </div>
-                  <div>
+                  <div className="pt-6 text-sm text-secondary">
                     {content.shortContent ?? getExcerpt(content.content)}
                   </div>
                 </Link>
@@ -139,7 +139,10 @@ const FilterSelect = ({
   results: Record<FilterType, Array<any>>;
 }) => {
   return (
-    <li className="flex gap-8" onClick={() => setFilter(value)}>
+    <li
+      className="flex gap-8 text-secondary hover:translate-y-0.5 hover:text-highlight"
+      onClick={() => setFilter(value)}
+    >
       {currentValue === value ? <span>→</span> : null}
       {children}
       <span>[ {results[value]?.length ?? 0} ]</span>

@@ -70,6 +70,9 @@ export default {
           "clamp(2.5rem, 2.3333rem + 0.7407vw, 3rem);",
         ],
       },
+      fontFamily: {
+        content: "var(--content)",
+      },
       fontWeight: {
         light: "300",
         regular: "500",

@@ -28,7 +28,7 @@ export const Pagination = ({
   ) => {
     const href = `${baseUrl}?page=${page}`;
     const linkClassName = cn(
-      isDisabled && "pointer-events-none text-muted-foreground opacity-50",
+      isDisabled && "pointer-events-none text-muted opacity-50",
     );
 
     if (isDisabled) {
@@ -45,17 +45,20 @@ export const Pagination = ({
   return (
     <nav
       aria-label="Pagination"
-      className={cn("mt-8 flex items-center justify-between gap-4", className)}
+      className={cn(
+        "mt-8 flex items-center justify-center gap-8 py-8",
+        className,
+      )}
     >
       {renderLink(
         currentPage - 1,
-        <ArrowLeft className="size-6" />,
+        <ArrowLeft className="size-10" />,
         currentPage <= 0,
       )}
 
       {renderLink(
         currentPage + 1,
-        <ArrowRight className="size-6" />,
+        <ArrowRight className="size-10" />,
         currentPage >= totalPages,
       )}
     </nav>

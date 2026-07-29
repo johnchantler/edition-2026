@@ -45,11 +45,11 @@ export const Product = ({
           </div>
         </div>
 
-        <div className="md:w-2/3 md:translate-x-16">
+        <div className="md:w-2/3 md:pl-16">
           <VenueImage image={product.image} />
         </div>
 
-        <div className="translate-x-8 md:translate-x-16">
+        <div className="pl-8 md:pl-16">
           {variants.length > 0 ? (
             <div className="flex flex-row gap-4 pt-2 text-lg">
               {variants.map((variant) => (
@@ -65,7 +65,7 @@ export const Product = ({
           ) : null}
         </div>
         <VenueContent
-          className="flex flex-col gap-6"
+          className="flex max-w-[48rem] flex-col gap-6 md:pl-16"
           content={content}
           contentStyles={renderedStyles}
         />
