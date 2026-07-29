@@ -72,13 +72,13 @@ export const EventFeatured = ({
             {!isCancelled && event.tickets ? (
               <TicketList tickets={event.tickets} />
             ) : null}
-            <Link href={`/events/${event.slug}`}>
-              <VenueContent
-                className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
-                content={content}
-                contentStyles={renderedStyles}
-              />
-            </Link>
+
+            <VenueContent
+              className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
+              content={content}
+              contentStyles={renderedStyles}
+            />
+
             <div className="flex flex-col gap-0 pl-8 md:pl-16">
               {artists.map(({ profile }) => (
                 <ProfileLink key={profile.slug} profile={profile} />
