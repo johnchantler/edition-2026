@@ -53,7 +53,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
                 </div>
               )}
 
-              <div className="gap-0 text-balance text-highlight md:pl-16">
+              <div className="gap-0 text-balance text-highlight first:pl-0 md:pl-16">
                 {content.title}
               </div>
             </div>
@@ -89,7 +89,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
         {location ? <LocationAddress location={location} /> : null}
         {displayImage ? (
           <div className="md:m-auto md:w-2/3 md:pt-12">
-            <VenueImage className="" image={displayImage} />
+            <VenueImage image={displayImage} />
           </div>
         ) : null}
         {artists.map(({ profile }) => (
