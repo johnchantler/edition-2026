@@ -54,12 +54,12 @@ export const ListProduct = ({
           </Link>
         </div>
       ) : null}
-      <div className="flex flex-col gap-0 md:flex-row md:gap-4">
+      <div className="flex flex-col gap-0 text-nowrap md:flex-row md:gap-4">
         <div>
           {" "}
           <Link href={`/shop/${product.slug}`}>{product.author}</Link>
         </div>
-        <div className="text-highlight hover:translate-y-0.5 hover:brightness-125">
+        <div className="text-nowrap text-highlight hover:translate-y-0.5 hover:brightness-125">
           <Link href={`/shop/${product.slug}`}>{content.title}</Link>
         </div>{" "}
         <div>
