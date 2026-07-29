@@ -38,7 +38,9 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
           />
         </div>
         <div className="m-auto pb-8 md:w-2/3 md:py-8">
-          <VenueImage image={profile.image} aspect="video" />
+          {profile.image ? (
+            <VenueImage image={profile.image} aspect="video" />
+          ) : null}
         </div>
         <ErrorBoundary fallback={null}>
           <Suspense fallback={<ProfileEventListSkeleton numElements={1} />}>

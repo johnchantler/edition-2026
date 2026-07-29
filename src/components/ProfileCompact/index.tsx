@@ -29,7 +29,9 @@ export const ProfileCompact = ({ profile }: { profile: VenueProfile }) => {
         />
         <div className="m-auto py-8 md:w-2/3 md:pt-12">
           <Link href={`/artists/${profile.slug}`}>
-            <VenueImage image={profile.image} aspect="video" />
+            {profile.image ? (
+              <VenueImage image={profile.image} aspect="video" />
+            ) : null}
           </Link>
         </div>
       </div>
