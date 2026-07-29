@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'content';
+    src: url('fonts/content.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
 html {
   --background: 300, 1%, 5%, 1;
   --primary: 120, 25%, 90%, 1;
