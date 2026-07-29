@@ -3,7 +3,7 @@ import removeMarkdown from "remove-markdown";
 // rendered styles for rendered content
 export const renderedStyles = {
   p: "font-content text-primary text-sm",
-  h2: "text-secondary text-xl pt-4",
+  h2: "text-secondary text-lg pt-4",
   h3: "text-secondary text-lg pt-4",
   ol: "list-decimal pl-8",
   ul: "list-disc pl-4",
