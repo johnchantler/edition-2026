@@ -38,7 +38,7 @@ export async function FeaturedEventsContent({ locale }: { locale: string }) {
               key={event.id}
               event={event}
               site={site}
-              className="lg:pb-16"
+              className=""
             />
           ))}
         </div>

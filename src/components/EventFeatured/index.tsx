@@ -42,7 +42,7 @@ export const EventFeatured = ({
   return (
     <>
       <TwoColumnLayout className={cn(className, "hidden")}>
-        <ColumnFull className="gap-0 overflow-hidden">
+        <ColumnFull className="gap-0">
           <Link href={`/events/${event.slug}`}>
             <VenueImage image={event.image} />
           </Link>
@@ -87,10 +87,10 @@ export const EventFeatured = ({
           </div>
         </ColumnFull>
       </TwoColumnLayout>
-      <div className="flex sm:hidden">
-        <div className="flex flex-col gap-8">
+      <div className="flex pt-8 md:hidden">
+        <div className="flex flex-col gap-0">
           <div>
-            <div className="text-secondary">
+            <div className="text-primary">
               <Link href={`/events/${event.slug}`}>
                 {formatDateRange({
                   start: event.startDate,
@@ -100,15 +100,17 @@ export const EventFeatured = ({
                 })}
               </Link>
             </div>
-            {location ? <LocationLink location={location} /> : null}
+            {location ? <LocationDisplay location={location} /> : null}
           </div>
-          <div className="">
+          <div className="text-highlight hover:translate-y-0.5">
             <Link href={`/events/${event.slug}`}>{content.title}</Link>
           </div>
-          <Link href={`/events/${event.slug}`}>
-            <VenueImage image={event.image} />
-          </Link>
-          <div className="">
+          {event.image ? (
+            <Link href={`/events/${event.slug}`}>
+              <VenueImage image={event.image} />
+            </Link>
+          ) : null}
+          <div className="pt-6">
             <VenueContent content={content} contentStyles={renderedStyles} />
           </div>
         </div>

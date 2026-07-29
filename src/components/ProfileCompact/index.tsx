@@ -18,16 +18,16 @@ export const ProfileCompact = ({ profile }: { profile: VenueProfile }) => {
 
   return (
     <>
-      <div className="flex flex-col gap-0 py-8">
+      <div className="flex flex-col gap-0 md:py-8">
         <div className="pl-8 text-highlight transition-transform hover:translate-y-0.5 hover:brightness-125 md:pl-16">
           <Link href={`/artists/${profile.slug}`}>( {content.title} )</Link>
         </div>
         <VenueContent
-          className="flex max-w-[48rem] flex-col gap-6 pr-4 md:pl-24 md:pt-6"
+          className="flex max-w-[48rem] flex-col gap-6 pr-4 pt-6 md:pl-24"
           content={content}
           contentStyles={renderedStyles}
         />
-        <div className="m-auto py-8 md:w-2/3 md:pt-12">
+        <div className="py-8 md:m-auto md:w-2/3 md:pt-12">
           <Link href={`/artists/${profile.slug}`}>
             {profile.image ? (
               <VenueImage image={profile.image} aspect="video" />

@@ -87,7 +87,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
           contentStyles={renderedStyles}
         />
         {displayImage ? (
-          <div className="m-auto md:w-2/3 md:pt-12">
+          <div className="md:m-auto md:w-2/3 md:pt-12">
             <VenueImage className="" image={displayImage} />
           </div>
         ) : null}
