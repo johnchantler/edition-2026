@@ -58,7 +58,9 @@ export const NewsArticle = async ({
           <div className="pt-6 md:w-2/3 md:pl-16">
             <VenueImage image={article.image} aspect="video" />
           </div>
-        ) : null}
+        ) : (
+          <div className="min-h-12" />
+        )}
         <div className="flex -translate-y-4 flex-col gap-2 pl-8 md:pl-16">
           {artists.map(({ profile }) => (
             <ProfileLink key={profile.slug} profile={profile} />
