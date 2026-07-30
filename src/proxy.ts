@@ -52,14 +52,6 @@ export default async function proxy(request: NextRequest) {
 
   // SUBDOMAIN ROUTING
 
-  // check the subdomain which we'll use as a the sitekey
-  const subdomain = host.split(".")[0];
-
-  // check if a custom domain exists (don't bother checking if it's hosted on venuecms.com)
-  const domainSiteKey = /.*venuecms\.com.*/i.test(host)
-    ? undefined
-    : await getSiteKeyByDomain({ domain: host });
-
   const siteKey = "edition";
 
   // rewrite with the sitekey as part of the path for caching and to give access to all sub pages
