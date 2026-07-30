@@ -60,12 +60,7 @@ export default async function proxy(request: NextRequest) {
     ? undefined
     : await getSiteKeyByDomain({ domain: host });
 
-  const siteKey = domainSiteKey?.data
-    ? domainSiteKey.data.siteKey
-    : subdomain === "localhost" || subdomain === "venuecms"
-      ? // Use the sample site by default so we can render without a siteKey (but also allow this to work even if you haven't edited this file and simply want to pass in an env var)
-        "sample"
-      : subdomain;
+  const siteKey = "edition";
 
   // rewrite with the sitekey as part of the path for caching and to give access to all sub pages
   const localizedURL = new URL(request.url);
