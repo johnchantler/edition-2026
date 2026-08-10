@@ -32,9 +32,7 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
     <TwoColumnLayout>
       <ColumnFull className="">
         <div className="flex flex-col gap-0">
-          <div className="pl-8 text-highlight md:pl-16">
-            ( {content.title} )
-          </div>
+          <div className="pl-8 text-highlight md:pl-16">{content.title}</div>
           <VenueContent
             className="flex max-w-[48rem] flex-col gap-6 pt-6 md:pl-24"
             content={content}
