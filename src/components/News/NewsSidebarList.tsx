@@ -66,8 +66,8 @@ export const NewsSidebarList = ({
           key={item.slug}
           href={`/news/${item.slug}`}
           className={cn(
-            "hover:translate-y-0.5 hover:text-muted",
-            item.slug === currentSlug ? "text-primary" : "text-secondary",
+            "font-content text-sm hover:translate-y-0.5 hover:text-muted",
+            item.slug === currentSlug ? "text-highlight" : "text-secondary",
           )}
         >
           ( {item.title} )
