@@ -81,12 +81,13 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
         {!isCancelled && event.tickets ? (
           <TicketList tickets={event.tickets} />
         ) : null}
+        {location ? <LocationAddress location={location} /> : null}
+
         <VenueContent
           className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
           content={content}
           contentStyles={renderedStyles}
         />
-        {location ? <LocationAddress location={location} /> : null}
         {displayImage ? (
           <div className="md:m-auto md:w-2/3 md:pt-12">
             <VenueImage image={displayImage} />
