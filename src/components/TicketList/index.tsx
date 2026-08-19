@@ -25,7 +25,7 @@ export const TicketList = ({ tickets }: { tickets: Array<TicketOnEvent> }) => {
           </Link>
         ) : (
           <div key={ticket.name}>
-            {ticket.name.toLowerCase() !== "regular" &&
+            {ticket.name.toLowerCase() !== "advance" &&
             !(ticketText === "free" && tickets.length === 1)
               ? ticket.name.toLowerCase()
               : ""}{" "}
