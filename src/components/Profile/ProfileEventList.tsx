@@ -10,7 +10,7 @@ export const ProfileEventList = async ({
 }: {
   header: string;
   slug: string;
-  filter?: { upcoming?: string; lt?: number; dir?: "asc" | "desc" };
+  filter?: { upcoming?: boolean; lt?: number; dir?: "asc" | "desc" };
 }) => {
   const [{ data: events }, { data: site }] = await Promise.all([
     getProfileEvents({ slug, limit: 60, ...filter }),

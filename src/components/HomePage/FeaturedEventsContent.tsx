@@ -5,7 +5,7 @@ import { VenueImage } from "@/components/VenueImage";
 
 export async function FeaturedEventsContent({ locale }: { locale: string }) {
   const [{ data: featuredEvents }, { data: site }] = await Promise.all([
-    getEvents({ limit: 6, featured: "true" }),
+    getEvents({ limit: 6, featured: true }),
     getSite(),
   ]);
 

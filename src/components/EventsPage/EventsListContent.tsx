@@ -14,7 +14,7 @@ import { EventsListArtist, ListEventArtist } from "../EventListArtist";
 
 export async function EventsListContent({ locale }: { locale: string }) {
   const [{ data: events }, { data: page }, { data: site }] = await Promise.all([
-    getEvents({ limit: 60, upcoming: "true" }),
+    getEvents({ limit: 60, upcoming: true }),
     getPage({ slug: "events" }),
     getSite(),
   ]);

@@ -12,7 +12,7 @@ export const ProfileProductList = async ({
 }: {
   header: string;
   slug: string;
-  filter?: { upcoming?: string; lt?: number; dir?: "asc" | "desc" };
+  filter?: { upcoming?: boolean; lt?: number; dir?: "asc" | "desc" };
 }) => {
   const [{ data: products }, { data: site }] = await Promise.all([
     getProfileProducts({ slug, limit: 60, ...filter }),
