@@ -49,7 +49,7 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
             <ProfileProductList
               header={t("recordings")}
               slug={profile.slug}
-              filter={{ upcoming: true, dir: "asc" }}
+              filter={{ upcoming: "true", dir: "asc" }}
             />
           </Suspense>
         </ErrorBoundary>
@@ -58,7 +58,7 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
             <ProfileEventList
               header={t("upcoming_events")}
               slug={profile.slug}
-              filter={{ upcoming: true, dir: "asc" }}
+              filter={{ upcoming: "true", dir: "asc" }}
             />
           </Suspense>
         </ErrorBoundary>

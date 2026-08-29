@@ -22,8 +22,8 @@ importers:
         specifier: ^5.90.21
         version: 5.90.21(react@19.2.4)
       '@venuecms/sdk-next':
-        specifier: ^1.10.0
-        version: 1.10.0(@swc/core@1.15.18)(jiti@1.21.7)(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(postcss@8.5.8)(react@19.2.4)(yaml@2.6.1)
+        specifier: ^2.0.0
+        version: 2.0.0(@swc/core@1.15.18)(jiti@1.21.7)(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(postcss@8.5.8)(react@19.2.4)(yaml@2.6.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1078,14 +1078,14 @@ packages:
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
 
-  '@venuecms/sdk-next@1.10.0':
-    resolution: {integrity: sha512-3fQG7vsRSx5NNOg28A4d2hgI7zsZeUAmgqx8Twcl8n8JLgTKVrDg5Gca6uzuPpIKrUfhwf6SxVbuhuTxP4+pIg==}
+  '@venuecms/sdk-next@2.0.0':
+    resolution: {integrity: sha512-q9AGFg2MdJNwWmDHlWwgPcBxL1fyoBM4wZeL6bVtsBrXxGfTIbqfmibkR0b5h+MyOOsTxDYKQy9ZEaP8NfPwBg==}
     peerDependencies:
-      next: '>=14'
+      next: '>=16'
       react: '>=19'
 
-  '@venuecms/sdk@1.8.1':
-    resolution: {integrity: sha512-wyfD6VMBUNwcj+OjB67MzwSdSAvIE5Us31ZDJ8DH2dvXTiAjcJh84x4kQ1jzteZe9G7pBwZw2w60BPAqd7J3/Q==}
+  '@venuecms/sdk@1.9.0':
+    resolution: {integrity: sha512-xnditYdxrbAamZqdwrTkUcy67TwMvKC1B5mrAYN5ZaMwyAIUqr4RCfGuYJZidAyeBsu8UtDVLUA2I1Rogxy75w==}
 
   acorn@8.17.0:
     resolution: {integrity: sha512-xRQbDb9BnwDafYNn6Vwl839DYVjqXYb1XVGtWAZ1kcDc6iwAL4hg3B1dZlRiuENFeO2H53gFG3in621AdERVAg==}
@@ -1818,11 +1818,11 @@ packages:
       typescript:
         optional: true
 
-  typedoc-plugin-markdown@4.12.0:
-    resolution: {integrity: sha512-eJDEMAfxCmede22c/Jw7d0FA13ggAQv+KkwQYKYCdqI02cin6Rc9QRwbG/7XvvHWinuFejySnZVUWDtvGk3Vbg==}
+  typedoc-plugin-markdown@4.4.2:
+    resolution: {integrity: sha512-kJVkU2Wd+AXQpyL6DlYXXRrfNrHrEIUgiABWH8Z+2Lz5Sq6an4dQ/hfvP75bbokjNDUskOdFlEEm/0fSVyC7eg==}
     engines: {node: '>= 18'}
     peerDependencies:
-      typedoc: 0.28.x
+      typedoc: 0.27.x
 
   typedoc@0.27.9:
     resolution: {integrity: sha512-/z585740YHURLl9DN2jCWe6OW7zKYm6VoQ93H0sxZ1cwHQEQrUn5BJrEnkWhfzUdyO+BLGjnKUZ9iz9hKloFDw==}
@@ -2636,10 +2636,10 @@ snapshots:
 
   '@types/unist@3.0.3': {}
 
-  '@venuecms/sdk-next@1.10.0(@swc/core@1.15.18)(jiti@1.21.7)(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(postcss@8.5.8)(react@19.2.4)(yaml@2.6.1)':
+  '@venuecms/sdk-next@2.0.0(@swc/core@1.15.18)(jiti@1.21.7)(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(postcss@8.5.8)(react@19.2.4)(yaml@2.6.1)':
     dependencies:
       '@types/react': 19.2.14
-      '@venuecms/sdk': 1.8.1
+      '@venuecms/sdk': 1.9.0
       clsx: 2.1.1
       markdown-to-jsx: 7.7.17(react@19.2.4)
       next: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -2649,7 +2649,7 @@ snapshots:
       tailwindcss: 4.3.2
       tsup: 8.5.1(@swc/core@1.15.18)(jiti@1.21.7)(postcss@8.5.8)(typescript@5.9.3)(yaml@2.6.1)
       typedoc: 0.27.9(typescript@5.9.3)
-      typedoc-plugin-markdown: 4.12.0(typedoc@0.27.9(typescript@5.9.3))
+      typedoc-plugin-markdown: 4.4.2(typedoc@0.27.9(typescript@5.9.3))
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@microsoft/api-extractor'
@@ -2660,7 +2660,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@venuecms/sdk@1.8.1':
+  '@venuecms/sdk@1.9.0':
     dependencies:
       '@hey-api/client-fetch': 0.5.7
       zod: 3.25.76
@@ -3344,7 +3344,7 @@ snapshots:
       - tsx
       - yaml
 
-  typedoc-plugin-markdown@4.12.0(typedoc@0.27.9(typescript@5.9.3)):
+  typedoc-plugin-markdown@4.4.2(typedoc@0.27.9(typescript@5.9.3)):
     dependencies:
       typedoc: 0.27.9(typescript@5.9.3)
 

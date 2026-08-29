@@ -1,5 +1,4 @@
 import { getProfileEvents, getSite } from "@venuecms/sdk-next";
-import { connection } from "next/server";
 
 import { EventsList, ListEvent } from "@/components/EventList";
 import { Skeleton } from "@/components/ui/Input/Skeleton";
@@ -11,10 +10,8 @@ export const ProfileEventList = async ({
 }: {
   header: string;
   slug: string;
-  filter?: { upcoming?: boolean; lt?: number; dir?: "asc" | "desc" };
+  filter?: { upcoming?: string; lt?: number; dir?: "asc" | "desc" };
 }) => {
-  await connection();
-
   const [{ data: events }, { data: site }] = await Promise.all([
     getProfileEvents({ slug, limit: 60, ...filter }),
     getSite(),

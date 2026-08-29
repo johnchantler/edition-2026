@@ -2,7 +2,6 @@ import { LocalizedContent, getLocalizedContent } from "@venuecms/sdk-next";
 import { VenueContent } from "@venuecms/sdk-next";
 import { getEvents, getSite } from "@venuecms/sdk-next";
 import { ArrowRight } from "lucide-react";
-import { connection } from "next/server";
 
 import { Link } from "@/lib/i18n";
 
@@ -19,10 +18,8 @@ import { renderedStyles } from "@/components/utils";
 import { EventsListArtist, ListEventArtist } from "../EventListArtist";
 
 export async function EventsContent({ locale }: { locale: string }) {
-  await connection();
-
   const [{ data: events }, { data: site }] = await Promise.all([
-    getEvents({ limit: 10, upcoming: true }),
+    getEvents({ limit: 10, upcoming: "true" }),
     getSite(),
   ]);
 

@@ -1,7 +1,6 @@
 import { getLocalizedContent } from "@venuecms/sdk-next";
 import { getPage, getProducts, getSite } from "@venuecms/sdk-next";
 import { notFound } from "next/navigation";
-import { connection } from "next/server";
 
 import { ListProduct } from "@/components/ListProduct";
 import { Pagination } from "@/components/Pagination";
@@ -15,8 +14,6 @@ export async function ProductsListContent({
   locale: string;
   currentPage: number;
 }) {
-  await connection();
-
   const [{ data: products }, { data: page }, { data: site }] =
     await Promise.all([
       getProducts({
