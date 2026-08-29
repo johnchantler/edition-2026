@@ -1,13 +1,10 @@
 import { getProducts, getSite } from "@venuecms/sdk-next";
-import { connection } from "next/server";
 
 import { Link } from "@/lib/i18n";
 
 import { ListProduct } from "@/components/ListProduct";
 
 export async function ProductsContent() {
-  await connection();
-
   const [{ data: products }, { data: site }] = await Promise.all([
     getProducts({ limit: 2 }),
     getSite(),
