@@ -1,13 +1,10 @@
 import { getProducts, getSite } from "@venuecms/sdk-next";
-import { connection } from "next/server";
 
 import { Link } from "@/lib/i18n";
 
 import { ListProduct } from "@/components/ListProduct";
 
 export async function ProductsContent() {
-  await connection();
-
   const [{ data: products }, { data: site }] = await Promise.all([
     getProducts({ limit: 2 }),
     getSite(),
@@ -20,7 +17,7 @@ export async function ProductsContent() {
 
   return (
     <section className="py-20">
-      <div className="grid grid-cols-2 gap-8 pb-20 sm:max-w-full sm:grid-cols-2 xl:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 pb-20 sm:max-w-full sm:grid-cols-2 xl:grid-cols-2">
         {topProducts?.length
           ? topProducts.map((product) => (
               <ListProduct
@@ -39,14 +36,12 @@ export async function ProductsContent() {
           ))}
         </div>
       ) : null}
-      <div className="w-full grid-cols-3 sm:grid">
-        <span></span>
-        <span></span>
+      <div className="w-full grid-cols-3">
         <Link
-          className="flex w-full hover:translate-y-0.5 hover:text-secondary sm:relative sm:flex-row"
+          className="flex w-full justify-center font-content text-sm text-highlight hover:translate-y-0.5 hover:text-secondary sm:relative sm:flex-row"
           href="/shop"
         >
-          → see all
+          [ see all fönstret releases ]
         </Link>
       </div>
     </section>

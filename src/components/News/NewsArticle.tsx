@@ -39,15 +39,15 @@ export const NewsArticle = async ({
 
   const date =
     typeof article.date === "string"
-      ? format(new Date(article.date), "d MMMM yy")
+      ? format(new Date(article.date), "d.M.yy")
       : null;
 
   return (
     <TwoColumnLayout className="overflow-hidden">
       <ColumnFull className="gap-0">
         <h1 className="text-wrap pl-8 text-muted md:pl-16">
-          ( {date ? <span className="hidden md:inline">{date} — </span> : null}{" "}
-          {content.title} )
+          {date ? <span className="hidden md:inline">{date} — </span> : null}
+          {content.title}
         </h1>
         <VenueContent
           className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"

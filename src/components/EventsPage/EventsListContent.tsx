@@ -1,7 +1,6 @@
 import { getLocalizedContent } from "@venuecms/sdk-next";
 import { getEvents, getPage, getSite } from "@venuecms/sdk-next";
 import { notFound } from "next/navigation";
-import { connection } from "next/server";
 
 import { EventsList, ListEvent } from "@/components/EventList";
 import {
@@ -14,8 +13,6 @@ import {
 import { EventsListArtist, ListEventArtist } from "../EventListArtist";
 
 export async function EventsListContent({ locale }: { locale: string }) {
-  await connection();
-
   const [{ data: events }, { data: page }, { data: site }] = await Promise.all([
     getEvents({ limit: 60, upcoming: true }),
     getPage({ slug: "events" }),

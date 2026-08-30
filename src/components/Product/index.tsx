@@ -37,7 +37,7 @@ export const Product = ({
     <TwoColumnLayout>
       <ColumnFull>
         <div className="flex flex-col gap-0 pl-8 md:gap-4 md:pl-16">
-          <div className="text-highlight">( {content.title} )</div>
+          <div className="text-highlight">{content.title}</div>
           <div>
             {product.author ? (
               <div className={cn("pl-8 text-secondary")}>{product.author}</div>

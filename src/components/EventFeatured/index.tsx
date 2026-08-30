@@ -43,9 +43,6 @@ export const EventFeatured = ({
     <>
       <TwoColumnLayout className={cn(className, "hidden")}>
         <ColumnFull className="gap-0">
-          <Link href={`/events/${event.slug}`}>
-            <VenueImage image={event.image} />
-          </Link>
           <div className="pl-8 md:pl-16">
             <div className="text-highlight transition-transform hover:translate-y-0.5 hover:brightness-125">
               <Link href={`/events/${event.slug}`}>{content.title}</Link>
@@ -79,6 +76,11 @@ export const EventFeatured = ({
               contentStyles={renderedStyles}
             />
 
+            <div className="md:m-auto md:w-2/3 md:pt-12">
+              <Link href={`/events/${event.slug}`}>
+                <VenueImage image={event.image} />
+              </Link>
+            </div>
             <div className="flex flex-col gap-0 pl-8 md:pl-16">
               {artists.map(({ profile }) => (
                 <ProfileLink key={profile.slug} profile={profile} />

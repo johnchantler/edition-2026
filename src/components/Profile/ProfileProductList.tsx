@@ -1,5 +1,4 @@
 import { getProfileProducts, getSite } from "@venuecms/sdk-next";
-import { connection } from "next/server";
 
 import { EventsList, ListEvent } from "@/components/EventList";
 import { Skeleton } from "@/components/ui/Input/Skeleton";
@@ -15,8 +14,6 @@ export const ProfileProductList = async ({
   slug: string;
   filter?: { upcoming?: boolean; lt?: number; dir?: "asc" | "desc" };
 }) => {
-  await connection();
-
   const [{ data: products }, { data: site }] = await Promise.all([
     getProfileProducts({ slug, limit: 60, ...filter }),
     getSite(),
