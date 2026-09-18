@@ -67,7 +67,12 @@ export const ListEventArtist = ({
       ) : null}
       <div className="flex flex-col gap-0 md:flex-row md:gap-4">
         {event.startDate ? (
-          <div className="text-primary md:text-nowrap">
+          <div
+            className={cn(
+              "text-primary md:text-nowrap",
+              isCancelled && "line-through opacity-20",
+            )}
+          >
             <Link href={`/events/${event.slug}`}>
               {formatDateRange({
                 start: event.startDate,
@@ -83,7 +88,7 @@ export const ListEventArtist = ({
         <div
           className={cn(
             "text-highlight hover:brightness-150 md:text-nowrap",
-            isCancelled && "line-through",
+            isCancelled && "line-through opacity-20",
           )}
         >
           {artists.length ? (
@@ -93,11 +98,14 @@ export const ListEventArtist = ({
           )}
         </div>
         {event.location && !event.location.isDefault ? (
-          <Link href={`/events/${event.slug}`}>
-            <LocationDisplay location={event.location} />
-          </Link>
+          <div className={cn("", isCancelled && "line-through opacity-20")}>
+            {" "}
+            <Link href={`/events/${event.slug}`}>
+              <LocationDisplay location={event.location} />
+            </Link>
+          </div>
         ) : null}
-        {isCancelled ? <div className="">Cancelled</div> : null}
+        {isCancelled ? <div className="opacity-20">Cancelled</div> : null}
       </div>
     </div>
   );
