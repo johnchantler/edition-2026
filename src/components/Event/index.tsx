@@ -61,7 +61,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
           <div
             className={cn(
               "flex flex-col gap-0 text-secondary md:flex-row md:gap-8 md:pl-16",
-              isCancelled && "line-through",
+              isCancelled && "line-through opacity-40",
             )}
           >
             {formatDateRange({
@@ -72,11 +72,12 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
             })}
 
             {location ? <LocationLink location={location} /> : null}
-
-            {isCancelled ? (
-              <div className="text-secondary">Cancelled</div>
-            ) : null}
           </div>
+          {isCancelled ? (
+            <div className="px-8 pt-12 font-content text-sm text-primary text-rose-400 md:px-32">
+              This event is cancelled
+            </div>
+          ) : null}
         </div>
         {!isCancelled && event.tickets ? (
           <TicketList tickets={event.tickets} />
