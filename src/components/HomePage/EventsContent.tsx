@@ -37,9 +37,9 @@ export async function EventsContent({ locale }: { locale: string }) {
       <ColumnFull>
         {events?.records.length ? (
           <section className="flex flex-col gap-3">
-            <EventsListArtist>
+            <EventsList>
               {events.records.map((event) => (
-                <ListEventArtist
+                <ListEvent
                   key={event.id}
                   event={event}
                   site={site}
@@ -47,7 +47,7 @@ export async function EventsContent({ locale }: { locale: string }) {
                   dateTemplate={"d.M"}
                 />
               ))}
-            </EventsListArtist>
+            </EventsList>
             {events.records.length >= 11 ? (
               <div className="w-full grid-cols-1 gap-12 sm:grid">
                 <span></span>
