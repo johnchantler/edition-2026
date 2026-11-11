@@ -8,5 +8,17 @@
     "past_events": "Tidligere begivenheder",
     "see_all_upcoming_events": "se alle kommende begivenheder",
     "events": "Begivenheder"
+  },
+  "signup": {
+    "label": "Tilmeld dig vores nyhedsbrev",
+    "placeholder": "E-mailadresse",
+    "submit": "Tilmeld",
+    "submitting": "Tilmelder…",
+    "success": "Tak for din tilmelding!",
+    "invalid": "Indtast en gyldig e-mailadresse.",
+    "disabled": "Tilmelding til nyhedsbrevet er ikke tilgængelig i øjeblikket.",
+    "rate_limited": "For mange forsøg. Prøv igen senere.",
+    "rate_limited_seconds": "For mange forsøg. Prøv igen om {seconds} sekunder.",
+    "error": "Noget gik galt. Prøv igen."
   }
 }
