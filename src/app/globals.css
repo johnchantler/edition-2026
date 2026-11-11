@@ -18,6 +18,7 @@ html {
   --secondary: 120, 4%, 56%, 1;
   --muted: 120, 4%, 33%, 0.8;
   --pink: 341, 100%, 59%, 1;
+  --error: 0, 75%, 55%, 1;
 
   /* Card surface: the active theme's background, slightly darkened.
      Resolves lazily, so per-theme --background overrides flow through. */

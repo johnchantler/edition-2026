@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import { getLocale } from "next-intl/server";
 
 import { VenueImage } from "@/components/VenueImage";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import { ProfileCompact } from "../ProfileCompact";
 import { ProfileLink } from "../ProfileLink";
@@ -53,6 +54,7 @@ export const NewsArticle = async ({
           className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
           content={content}
           contentStyles={renderedStyles}
+          components={contentHandlers}
         />
         {article.image ? (
           <div className="pt-6 md:w-2/3 md:pl-16">

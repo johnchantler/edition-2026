@@ -8,6 +8,7 @@ import { useLocale } from "next-intl";
 import { PageWithParent } from "@/lib/utils/tree";
 
 import { VenueImage } from "@/components/VenueImage";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import { PageTree } from "../PageTree";
 import { ProfileCompact } from "../ProfileCompact";
@@ -44,6 +45,7 @@ export const Page = ({
             className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
             content={content}
             contentStyles={renderedStyles}
+            components={contentHandlers}
           />
         </div>
         <div className="pt-6 md:w-2/3 md:pl-16">

@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
+import { contentHandlers } from "@/components/utils/contentHandlers";
 import { renderedStyles } from "@/components/utils/styles";
 
 export const ListedContent = ({
@@ -51,6 +52,7 @@ export const ListedContent = ({
             className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
             content={content}
             contentStyles={renderedStyles}
+            components={contentHandlers}
           />
         )}
       </article>

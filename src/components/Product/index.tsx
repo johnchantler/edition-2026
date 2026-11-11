@@ -10,6 +10,7 @@ import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
 
 import { VenueImage } from "@/components/VenueImage";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import { ProfileCompact } from "../ProfileCompact";
 import {
@@ -70,6 +71,7 @@ export const Product = ({
           className="flex max-w-[48rem] flex-col gap-6 md:pl-16"
           content={content}
           contentStyles={renderedStyles}
+          components={contentHandlers}
         />
 
         {artists.map(({ profile }) => (
