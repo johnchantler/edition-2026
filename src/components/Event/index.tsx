@@ -10,6 +10,7 @@ import { Link } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import { VenueImage } from "@/components/VenueImage";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import { EventsListArtist } from "../EventListArtist";
 import { ListEventArtist } from "../EventListArtist";
@@ -88,6 +89,7 @@ export const Event = ({ event, site }: { event: VenueEvent; site: Site }) => {
           className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
           content={content}
           contentStyles={renderedStyles}
+          components={contentHandlers}
         />
         {displayImage ? (
           <div className="md:m-auto md:w-2/3 md:pt-12">

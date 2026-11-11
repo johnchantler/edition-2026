@@ -8,5 +8,17 @@
     "past_events": "Tidigare evenemang",
     "see_all_upcoming_events": "se alla kommande evenemang",
     "events": "Evenemang"
+  },
+  "signup": {
+    "label": "Prenumerera på vårt nyhetsbrev",
+    "placeholder": "E-postadress",
+    "submit": "Prenumerera",
+    "submitting": "Skickar…",
+    "success": "Tack för din anmälan!",
+    "invalid": "Ange en giltig e-postadress.",
+    "disabled": "Anmälan till nyhetsbrevet är inte tillgänglig just nu.",
+    "rate_limited": "För många försök. Försök igen senare.",
+    "rate_limited_seconds": "För många försök. Försök igen om {seconds} sekunder.",
+    "error": "Något gick fel. Försök igen."
   }
 }

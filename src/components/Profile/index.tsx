@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Suspense } from "react";
 
 import { VenueImage } from "@/components/VenueImage";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import {
   ColumnFull,
@@ -37,6 +38,7 @@ export const Profile = ({ profile }: { profile: VenueProfile }) => {
             className="flex max-w-[48rem] flex-col gap-6 pt-6 md:pl-24"
             content={content}
             contentStyles={renderedStyles}
+            components={contentHandlers}
           />
         </div>
         <div className="pb-8 md:m-auto md:w-2/3 md:py-8">

@@ -10,6 +10,7 @@ import { Link } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import { VenueImage } from "@/components/VenueImage";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import { LocationLink } from "../LocationLink";
 import { LocationDisplay } from "../LocationLinkSimple";
@@ -74,6 +75,7 @@ export const EventFeatured = ({
               className="flex max-w-[48rem] flex-col gap-6 md:pl-24 md:pt-6"
               content={content}
               contentStyles={renderedStyles}
+              components={contentHandlers}
             />
 
             <div className="md:m-auto md:w-2/3 md:pt-12">
@@ -113,7 +115,11 @@ export const EventFeatured = ({
             </Link>
           ) : null}
           <div className="pt-6">
-            <VenueContent content={content} contentStyles={renderedStyles} />
+            <VenueContent
+              content={content}
+              contentStyles={renderedStyles}
+              components={contentHandlers}
+            />
           </div>
         </div>
       </div>

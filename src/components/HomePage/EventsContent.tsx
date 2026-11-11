@@ -14,6 +14,7 @@ import {
   TwoColumnLayout,
 } from "@/components/layout";
 import { renderedStyles } from "@/components/utils";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import { EventsListArtist, ListEventArtist } from "../EventListArtist";
 
@@ -72,6 +73,7 @@ export async function EventsContent({ locale }: { locale: string }) {
               className="flex max-w-[48rem] flex-col gap-6"
               content={siteContent}
               contentStyles={renderedStyles}
+              components={contentHandlers}
             />
           </div>
         ) : null}
@@ -82,6 +84,7 @@ export async function EventsContent({ locale }: { locale: string }) {
             className="flex max-w-[48rem] flex-col gap-6"
             content={siteContent}
             contentStyles={renderedStyles}
+            components={contentHandlers}
           />
         ) : null}
       </ColumnFull>

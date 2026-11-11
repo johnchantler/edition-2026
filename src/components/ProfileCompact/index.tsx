@@ -8,6 +8,7 @@ import { useLocale } from "next-intl";
 import { Link } from "@/lib/i18n";
 
 import { VenueImage } from "@/components/VenueImage";
+import { contentHandlers } from "@/components/utils/contentHandlers";
 
 import { renderedStyles } from "../utils";
 
@@ -26,6 +27,7 @@ export const ProfileCompact = ({ profile }: { profile: VenueProfile }) => {
           className="flex max-w-[48rem] flex-col gap-6 pr-4 pt-6 md:pl-24"
           content={content}
           contentStyles={renderedStyles}
+          components={contentHandlers}
         />
         <div className="py-8 md:m-auto md:w-2/3 md:pt-12">
           <Link href={`/artists/${profile.slug}`}>
